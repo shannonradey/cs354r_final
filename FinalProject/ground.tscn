@@ -18,4 +18,3 @@ mesh = SubResource( 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="CSGMesh/StaticBody"]
 shape = SubResource( 3 )
-
