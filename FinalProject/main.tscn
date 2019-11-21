@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://ground.tscn" type="PackedScene" id=1]
 [ext_resource path="res://racetrack.tscn" type="PackedScene" id=2]
 [ext_resource path="res://player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://enemy.tscn" type="PackedScene" id=4]
+
+[sub_resource type="CubeMesh" id=1]
 
 [node name="Spatial" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.507679, 0, 0 )
@@ -11,14 +13,122 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.507679, 0, 0 )
 [node name="Ground" parent="." instance=ExtResource( 1 )]
 
 [node name="Track" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.504772, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.505, 0, 0 )
 
 [node name="player" parent="." instance=ExtResource( 3 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.163, 1.5, 17.618 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.163, 1.96487, 17.618 )
 
 [node name="enemy1" parent="." instance=ExtResource( 4 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 11.2059, 1, 15.253 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.0878, 1.97498, 14.0097 )
 
-[node name="enemy2" parent="." instance=ExtResource( 4 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12.2063, 1, 20.105 )
+[node name="Path" type="Spatial" parent="."]
 
+[node name="MeshInstance" type="MeshInstance" parent="Path"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 14.627 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance2" type="MeshInstance" parent="Path"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -9.825, 1.81, 14.627 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance3" type="MeshInstance" parent="Path"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -15.352, 1.81, 14.627 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance4" type="MeshInstance" parent="Path"]
+transform = Transform( 0.778624, 0, -0.183695, 0, 0.8, 0, 0.183695, 0, 0.778624, -20.775, 1.81, 14.627 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance5" type="MeshInstance" parent="Path"]
+transform = Transform( 0.729468, 0, -0.328446, 0, 0.8, 0, 0.328446, 0, 0.729468, -26.215, 1.81, 13.111 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance6" type="MeshInstance" parent="Path"]
+transform = Transform( 0.590589, 0, -0.539633, 0, 0.8, 0, 0.539633, 0, 0.590589, -30.628, 1.81, 9.72 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance7" type="MeshInstance" parent="Path"]
+transform = Transform( -3.49691e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.49691e-08, -34.023, 1.81, 0.607 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance8" type="MeshInstance" parent="Path"]
+transform = Transform( 0.422392, 0, 0.6794, 0, 0.8, 0, -0.6794, 0, 0.422392, -31.103, 1.81, -8.186 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance9" type="MeshInstance" parent="Path"]
+transform = Transform( 0.731984, 0, 0.322799, 0, 0.8, 0, -0.322799, 0, 0.731984, -25.186, 1.81, -12.152 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance10" type="MeshInstance" parent="Path"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -18.665, 1.81, -13.13 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance11" type="MeshInstance" parent="Path"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -11.203, 1.81, -13.13 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance12" type="MeshInstance" parent="Path"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.034, 1.81, -13.13 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance13" type="MeshInstance" parent="Path"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 3.888, 1.81, -13.13 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance14" type="MeshInstance" parent="Path"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 12.311, 1.81, -13.13 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance15" type="MeshInstance" parent="Path"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 20.731, 1.81, -13.13 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance16" type="MeshInstance" parent="Path"]
+transform = Transform( 0.667644, 0, -0.44074, 0, 0.8, 0, 0.44074, 0, 0.667644, 28.254, 1.81, -11.882 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance20" type="MeshInstance" parent="Path"]
+transform = Transform( 0.445901, 0, -0.664208, 0, 0.8, 0, 0.664208, 0, 0.445901, 33.956, 1.81, -6.649 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance17" type="MeshInstance" parent="Path"]
+transform = Transform( 0.10613, 0, -0.792929, 0, 0.8, 0, 0.792929, 0, 0.10613, 36.027, 1.81, -0.091 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance21" type="MeshInstance" parent="Path"]
+transform = Transform( -0.246851, 0, -0.760963, 0, 0.8, 0, 0.760963, 0, -0.246851, 35.457, 1.81, 6.072 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance18" type="MeshInstance" parent="Path"]
+transform = Transform( -0.654647, 0, -0.459823, 0, 0.8, 0, 0.459823, 0, -0.654647, 31.433, 1.81, 11.497 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance22" type="MeshInstance" parent="Path"]
+transform = Transform( 0.787933, 0, 0.138427, 0, 0.8, 0, -0.138427, 0, 0.787933, 25.17, 1.81, 14.66 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance19" type="MeshInstance" parent="Path"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 17.627, 1.81, 14.991 )
+mesh = SubResource( 1 )
+material/0 = null

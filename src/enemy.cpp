@@ -59,5 +59,5 @@ void Enemy::_process(float delta) {
     }
     move.x += .0001;
     move.z += .0001;
-    move_and_slide((move.operator*(4)));
+    move_and_slide((move.operator*(6)));
 }

@@ -35,5 +35,5 @@ void Player::_process(float delta) {
     if (input->is_action_pressed("ui_right")) {
         rotate_y(-0.02);
     }
-    move_and_collide(velocity);
+    move_and_slide(velocity * 10);
 }

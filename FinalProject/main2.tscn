@@ -15,9 +15,7 @@ transform = Transform( -0.0564957, 0, -0.998403, 0, 1, 0, 0.998403, 0, -0.056495
 place = 1
 
 [node name="Path" type="Spatial" parent="."]
-editor/display_folded = true
 transform = Transform( -0.441171, 0, -0.897423, 0, 1, 0, 0.897423, 0, -0.441171, 25.9658, 1.84997, -39.3633 )
-visible = false
 
 [node name="MeshInstance" type="MeshInstance" parent="Path"]
 transform = Transform( 0.956721, 0, 0.291007, 0, 1, 0, -0.291007, 0, 0.956721, 7.26035, 0, -3.56917 )
