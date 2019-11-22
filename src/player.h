@@ -21,7 +21,7 @@ public:
     ~Player();
 
     void _init(); // our initializer called by Godot
-
+    void _ready();
     void _process(float delta);
 };
 

@@ -22,6 +22,7 @@ void Enemy::_ready() {
     num_waypoints = waypoints.size();
     cur_waypoint = 0;
     set_target();
+    set_name("enemy");
 }
 
 void Enemy::set_target() {
@@ -50,12 +51,6 @@ void Enemy::_process(float delta) {
     }
     else if (target.z < cur_pos.z) {
         move.z += -1;
-    }
-    if (target.y > cur_pos.y) {
-        move.y += 1;
-    }
-    else if (target.y < cur_pos.y) {
-        move.y += -1;
     }
     move.x += .0001;
     move.z += .0001;

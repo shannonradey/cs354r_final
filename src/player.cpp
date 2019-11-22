@@ -4,6 +4,7 @@ using namespace godot;
 
 void Player::_register_methods() {
     register_method("_process", &Player::_process);
+    register_method("_ready", &Player::_ready);
 }
 
 Player::Player() {
@@ -14,6 +15,10 @@ Player::~Player() {
 
 void Player::_init() {
     input = Input::get_singleton();
+}
+
+void Player::_ready() {
+    set_name("player");
 }
 
 void Player::_process(float delta) {

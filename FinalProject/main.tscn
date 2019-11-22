@@ -17,11 +17,14 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.505, 0, 0 )
 
 [node name="player" parent="." instance=ExtResource( 3 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 5.163, 1.72217, 17.618 )
+place = 2
 
 [node name="enemy1" parent="." instance=ExtResource( 4 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 10.0878, 1.16708, 14.0097 )
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 10.6554, 1.2086, 14.005 )
+place = 3
 
 [node name="Path" type="Spatial" parent="."]
+editor/display_folded = true
 visible = false
 
 [node name="MeshInstance" type="MeshInstance" parent="Path"]
