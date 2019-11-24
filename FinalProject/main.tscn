@@ -1,11 +1,16 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://ground.tscn" type="PackedScene" id=1]
 [ext_resource path="res://racetrack.tscn" type="PackedScene" id=2]
 [ext_resource path="res://player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://enemy.tscn" type="PackedScene" id=4]
+[ext_resource path="res://bin/lap.gdns" type="Script" id=5]
 
 [sub_resource type="CubeMesh" id=1]
+
+[sub_resource type="CubeMesh" id=2]
+
+[sub_resource type="BoxShape" id=3]
 
 [node name="Spatial" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.507679, 0, 0 )
@@ -16,12 +21,12 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.507679, 0, 0 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.505, 0, 0 )
 
 [node name="player" parent="." instance=ExtResource( 3 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 5.163, 1.72217, 17.618 )
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 11.2307, 1.72217, 17.0257 )
 place = 2
 
 [node name="enemy1" parent="." instance=ExtResource( 4 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 10.6554, 1.2086, 14.005 )
-place = 3
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 5.98958, 1.2086, 13.9333 )
+place = 1
 
 [node name="Path" type="Spatial" parent="."]
 editor/display_folded = true
@@ -136,3 +141,16 @@ material/0 = null
 transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 17.627, 1.81, 14.991 )
 mesh = SubResource( 1 )
 material/0 = null
+
+[node name="Spatial" type="Spatial" parent="."]
+visible = false
+script = ExtResource( 5 )
+
+[node name="Finish_Line" type="CSGMesh" parent="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 5, 0.432409, 1.92186, 17.4665 )
+mesh = SubResource( 2 )
+
+[node name="Area" type="Area" parent="Spatial/Finish_Line"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Spatial/Finish_Line/Area"]
+shape = SubResource( 3 )
