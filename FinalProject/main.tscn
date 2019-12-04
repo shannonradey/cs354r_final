@@ -22,6 +22,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.507679, 0, 0 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.505, 0, 0 )
 
 [node name="player" parent="." instance=ExtResource( 3 )]
+<<<<<<< HEAD
 transform = Transform( -0.999975, 0, -0.00713816, 0, 1, 0, 0.00713816, 0, -0.999975, 4.04826, 1.72217, 17.5609 )
 place = 1
 
@@ -586,6 +587,14 @@ material/0 = null
 transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 21.6358 )
 mesh = SubResource( 1 )
 material/0 = null
+=======
+transform = Transform( -0.8, 0, -1.20797e-07, 0, 0.8, 0, 1.20797e-07, 0, -0.8, 9.72057, 1.72217, 17.5154 )
+place = 2
+
+[node name="enemy1" parent="." instance=ExtResource( 4 )]
+transform = Transform( -0.8, 0, -1.20797e-07, 0, 0.8, 0, 1.20797e-07, 0, -0.8, 5.98958, 1.2086, 14.3869 )
+place = 1
+>>>>>>> 35af93a3dc2ac10852f7f56aa98fe3a580e68935
 
 [node name="MeshInstance3" type="MeshInstance" parent="Path/Spatial15"]
 transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 20.0175 )
