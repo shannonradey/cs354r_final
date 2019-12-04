@@ -21,11 +21,11 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.507679, 0, 0 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.505, 0, 0 )
 
 [node name="player" parent="." instance=ExtResource( 3 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 11.2307, 1.72217, 17.0257 )
+transform = Transform( -0.8, 0, -1.20797e-07, 0, 0.8, 0, 1.20797e-07, 0, -0.8, 9.72057, 1.72217, 17.5154 )
 place = 2
 
 [node name="enemy1" parent="." instance=ExtResource( 4 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 5.98958, 1.2086, 13.9333 )
+transform = Transform( -0.8, 0, -1.20797e-07, 0, 0.8, 0, 1.20797e-07, 0, -0.8, 5.98958, 1.2086, 14.3869 )
 place = 1
 
 [node name="Path" type="Spatial" parent="."]
