@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://bin/gdexample.gdns" type="Script" id=1]
 [ext_resource path="res://bin/enemy.gdns" type="Script" id=2]
@@ -20,6 +20,10 @@ albedo_color = Color( 0.913725, 0.145098, 0.901961, 1 )
 albedo_color = Color( 0, 0, 0, 1 )
 metallic = 0.17
 
+[sub_resource type="SphereShape" id=8]
+
+[sub_resource type="SphereMesh" id=9]
+
 [node name="Spatial" type="Spatial"]
 script = ExtResource( 1 )
 
@@ -36,7 +40,8 @@ mesh = SubResource( 2 )
 material/0 = SubResource( 3 )
 
 [node name="FrontArea" type="Area" parent="KinematicBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 10, 0.417033, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 10, 0.417033, 0.457581, 0 )
+visible = false
 
 [node name="CollisionShape" type="CollisionShape" parent="KinematicBody/FrontArea"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.808451, 1.74298, -0.139402 )
@@ -44,7 +49,6 @@ shape = SubResource( 4 )
 
 [node name="MeshInstance" type="MeshInstance" parent="KinematicBody/FrontArea"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.41953, 0, -0.121637 )
-visible = false
 mesh = SubResource( 5 )
 material/0 = null
 
@@ -52,3 +56,25 @@ material/0 = null
 transform = Transform( -3.49691e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.49691e-08, -0.590049, 0.703264, 0 )
 mesh = SubResource( 6 )
 material/0 = SubResource( 7 )
+
+[node name="Area" type="Area" parent="KinematicBody"]
+transform = Transform( 1.4, 0, 0, 0, 1, 0, 0, 0, 1, -0.597958, 0.789915, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="KinematicBody/Area"]
+shape = SubResource( 8 )
+
+[node name="MeshInstance" type="MeshInstance" parent="KinematicBody/Area"]
+visible = false
+mesh = SubResource( 9 )
+material/0 = null
+
+[node name="Area2" type="Area" parent="KinematicBody"]
+transform = Transform( 4, 0, 0, 0, 1, 0, 0, 0, 4, -0.597958, 0.789915, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="KinematicBody/Area2"]
+shape = SubResource( 8 )
+
+[node name="MeshInstance" type="MeshInstance" parent="KinematicBody/Area2"]
+visible = false
+mesh = SubResource( 9 )
+material/0 = null

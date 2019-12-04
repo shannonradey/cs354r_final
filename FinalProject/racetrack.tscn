@@ -14,4 +14,3 @@ material = SubResource( 1 )
 [node name="CSGMesh" type="CSGMesh" parent="."]
 transform = Transform( 48, 0, 0, 0, 1, 0, 0, 0, 25, 0, 0.865514, 2.53163 )
 mesh = SubResource( 2 )
-
