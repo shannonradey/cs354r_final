@@ -6,12 +6,18 @@ void Player::_register_methods() {
     register_method("_process", &Player::_process);
     register_method("_ready", &Player::_ready);
     register_method("set_hit", &Player::set_hit);
+    register_method("box_grab", &Player::box_grab);
 }
 
 Player::Player() {
 }
 
 Player::~Player() {
+}
+
+void Player::box_grab() { 
+    speed = 10;
+    box_time = time(NULL);
 }
 
 void Player::_init() {
@@ -21,6 +27,7 @@ void Player::_init() {
 void Player::_ready() {
     set_name("player");
     time_hit = time(NULL) - 2;
+    speed = 4;
 }
 
 void Player::set_hit() {
@@ -28,6 +35,9 @@ void Player::set_hit() {
 }
 
 void Player::_process(float delta) {
+    if (time(NULL) - 2.5 > box_time) {
+        speed = 4;
+    }
     if (time(NULL) - 1.5 > time_hit) {
     	Vector3 cur;
     	Vector3 velocity = Vector3(0, 0, 0);
@@ -47,7 +57,7 @@ void Player::_process(float delta) {
         if (input->is_action_pressed("ui_right")) {
             rotate_y(-0.02);
         }
-        move_and_slide(velocity * 10);
+        move_and_slide(velocity * (speed));
     }
     else {
         rotate_y(.3);
