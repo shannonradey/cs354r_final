@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://ground.tscn" type="PackedScene" id=1]
 [ext_resource path="res://racetrack.tscn" type="PackedScene" id=2]
 [ext_resource path="res://player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://enemy.tscn" type="PackedScene" id=4]
 [ext_resource path="res://bin/lap.gdns" type="Script" id=5]
+[ext_resource path="res://Cube.tscn" type="PackedScene" id=6]
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -21,128 +22,1105 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.507679, 0, 0 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.505, 0, 0 )
 
 [node name="player" parent="." instance=ExtResource( 3 )]
-transform = Transform( -0.8, 0, -1.20797e-07, 0, 0.8, 0, 1.20797e-07, 0, -0.8, 9.72057, 1.72217, 17.5154 )
-place = 2
+transform = Transform( -0.999975, 0, -0.00713816, 0, 1, 0, 0.00713816, 0, -0.999975, 4.04826, 1.72217, 17.5609 )
+place = 3
 
 [node name="enemy1" parent="." instance=ExtResource( 4 )]
-transform = Transform( -0.8, 0, -1.20797e-07, 0, 0.8, 0, 1.20797e-07, 0, -0.8, 5.98958, 1.2086, 14.3869 )
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.15993, 1.2086, 15.5601 )
 place = 1
 
 [node name="Path" type="Spatial" parent="."]
 editor/display_folded = true
 visible = false
 
-[node name="MeshInstance" type="MeshInstance" parent="Path"]
-transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 14.627 )
+[node name="Spatial" type="Spatial" parent="Path"]
+editor/display_folded = true
+
+[node name="MeshInstance2" type="MeshInstance" parent="Path/Spatial"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 12.552 )
 mesh = SubResource( 1 )
 material/0 = null
 
-[node name="MeshInstance2" type="MeshInstance" parent="Path"]
-transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -9.825, 1.81, 14.627 )
+[node name="MeshInstance4" type="MeshInstance" parent="Path/Spatial"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 21.2792 )
 mesh = SubResource( 1 )
 material/0 = null
 
-[node name="MeshInstance3" type="MeshInstance" parent="Path"]
-transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -15.352, 1.81, 14.627 )
+[node name="MeshInstance6" type="MeshInstance" parent="Path/Spatial"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 13.5485 )
 mesh = SubResource( 1 )
 material/0 = null
 
-[node name="MeshInstance4" type="MeshInstance" parent="Path"]
-transform = Transform( 0.778624, 0, -0.183695, 0, 0.8, 0, 0.183695, 0, 0.778624, -20.775, 1.81, 14.627 )
+[node name="MeshInstance8" type="MeshInstance" parent="Path/Spatial"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 15.2305 )
 mesh = SubResource( 1 )
 material/0 = null
 
-[node name="MeshInstance5" type="MeshInstance" parent="Path"]
-transform = Transform( 0.729468, 0, -0.328446, 0, 0.8, 0, 0.328446, 0, 0.729468, -26.215, 1.81, 13.111 )
+[node name="MeshInstance7" type="MeshInstance" parent="Path/Spatial"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 17.0339 )
 mesh = SubResource( 1 )
 material/0 = null
 
-[node name="MeshInstance6" type="MeshInstance" parent="Path"]
-transform = Transform( 0.590589, 0, -0.539633, 0, 0.8, 0, 0.539633, 0, 0.590589, -30.628, 1.81, 9.72 )
+[node name="MeshInstance9" type="MeshInstance" parent="Path/Spatial"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 19.3021 )
 mesh = SubResource( 1 )
 material/0 = null
 
-[node name="MeshInstance7" type="MeshInstance" parent="Path"]
-transform = Transform( -3.49691e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.49691e-08, -34.023, 1.81, 0.607 )
+[node name="Spatial2" type="Spatial" parent="Path"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.66902, 0, 0 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="Path/Spatial2"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 21.6358 )
 mesh = SubResource( 1 )
 material/0 = null
 
-[node name="MeshInstance8" type="MeshInstance" parent="Path"]
-transform = Transform( 0.422392, 0, 0.6794, 0, 0.8, 0, -0.6794, 0, 0.422392, -31.103, 1.81, -8.186 )
+[node name="MeshInstance4" type="MeshInstance" parent="Path/Spatial2"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 18.113 )
 mesh = SubResource( 1 )
 material/0 = null
 
-[node name="MeshInstance9" type="MeshInstance" parent="Path"]
-transform = Transform( 0.731984, 0, 0.322799, 0, 0.8, 0, -0.322799, 0, 0.731984, -25.186, 1.81, -12.152 )
+[node name="MeshInstance8" type="MeshInstance" parent="Path/Spatial2"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 15.1944 )
 mesh = SubResource( 1 )
 material/0 = null
 
-[node name="MeshInstance10" type="MeshInstance" parent="Path"]
-transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -18.665, 1.81, -13.13 )
+[node name="MeshInstance3" type="MeshInstance" parent="Path/Spatial2"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 20.0175 )
 mesh = SubResource( 1 )
 material/0 = null
 
-[node name="MeshInstance11" type="MeshInstance" parent="Path"]
-transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -11.203, 1.81, -13.13 )
+[node name="MeshInstance5" type="MeshInstance" parent="Path/Spatial2"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 16.7817 )
 mesh = SubResource( 1 )
 material/0 = null
 
-[node name="MeshInstance12" type="MeshInstance" parent="Path"]
-transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.034, 1.81, -13.13 )
+[node name="MeshInstance6" type="MeshInstance" parent="Path/Spatial2"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 13.5485 )
 mesh = SubResource( 1 )
 material/0 = null
 
-[node name="MeshInstance13" type="MeshInstance" parent="Path"]
-transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 3.888, 1.81, -13.13 )
+[node name="MeshInstance7" type="MeshInstance" parent="Path/Spatial2"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 12.9973 )
 mesh = SubResource( 1 )
 material/0 = null
 
-[node name="MeshInstance14" type="MeshInstance" parent="Path"]
-transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 12.311, 1.81, -13.13 )
+[node name="Spatial3" type="Spatial" parent="Path"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.7947, 0, 0.713444 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="Path/Spatial3"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 21.6358 )
 mesh = SubResource( 1 )
 material/0 = null
 
-[node name="MeshInstance15" type="MeshInstance" parent="Path"]
-transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 20.731, 1.81, -13.13 )
+[node name="MeshInstance4" type="MeshInstance" parent="Path/Spatial3"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 18.2871 )
 mesh = SubResource( 1 )
 material/0 = null
 
-[node name="MeshInstance16" type="MeshInstance" parent="Path"]
-transform = Transform( 0.667644, 0, -0.44074, 0, 0.8, 0, 0.44074, 0, 0.667644, 28.254, 1.81, -11.882 )
+[node name="MeshInstance3" type="MeshInstance" parent="Path/Spatial3"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 20.0175 )
 mesh = SubResource( 1 )
 material/0 = null
 
-[node name="MeshInstance20" type="MeshInstance" parent="Path"]
-transform = Transform( 0.445901, 0, -0.664208, 0, 0.8, 0, 0.664208, 0, 0.445901, 33.956, 1.81, -6.649 )
+[node name="MeshInstance8" type="MeshInstance" parent="Path/Spatial3"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 15.3473 )
 mesh = SubResource( 1 )
 material/0 = null
 
-[node name="MeshInstance17" type="MeshInstance" parent="Path"]
-transform = Transform( 0.10613, 0, -0.792929, 0, 0.8, 0, 0.792929, 0, 0.10613, 36.027, 1.81, -0.091 )
+[node name="MeshInstance5" type="MeshInstance" parent="Path/Spatial3"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 16.7817 )
 mesh = SubResource( 1 )
 material/0 = null
 
-[node name="MeshInstance21" type="MeshInstance" parent="Path"]
-transform = Transform( -0.246851, 0, -0.760963, 0, 0.8, 0, 0.760963, 0, -0.246851, 35.457, 1.81, 6.072 )
+[node name="MeshInstance6" type="MeshInstance" parent="Path/Spatial3"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 13.5485 )
 mesh = SubResource( 1 )
 material/0 = null
 
-[node name="MeshInstance18" type="MeshInstance" parent="Path"]
-transform = Transform( -0.654647, 0, -0.459823, 0, 0.8, 0, 0.459823, 0, -0.654647, 31.433, 1.81, 11.497 )
+[node name="MeshInstance7" type="MeshInstance" parent="Path/Spatial3"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 12.9973 )
 mesh = SubResource( 1 )
 material/0 = null
 
-[node name="MeshInstance22" type="MeshInstance" parent="Path"]
-transform = Transform( 0.787933, 0, 0.138427, 0, 0.8, 0, -0.138427, 0, 0.787933, 25.17, 1.81, 14.66 )
+[node name="Spatial5" type="Spatial" parent="Path"]
+editor/display_folded = true
+transform = Transform( 0.919255, 0, -0.393661, 0, 1, 0, 0.393661, 0, 0.919255, -13.0311, 0, 3.4178 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Path/Spatial5"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 15.1603 )
 mesh = SubResource( 1 )
 material/0 = null
 
-[node name="MeshInstance19" type="MeshInstance" parent="Path"]
-transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 17.627, 1.81, 14.991 )
+[node name="MeshInstance2" type="MeshInstance" parent="Path/Spatial5"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 21.6358 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance3" type="MeshInstance" parent="Path/Spatial5"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 20.0175 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance4" type="MeshInstance" parent="Path/Spatial5"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 18.3995 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance5" type="MeshInstance" parent="Path/Spatial5"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 16.7817 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance6" type="MeshInstance" parent="Path/Spatial5"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 13.5485 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance7" type="MeshInstance" parent="Path/Spatial5"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 12.9973 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="Spatial4" type="Spatial" parent="Path"]
+editor/display_folded = true
+transform = Transform( 0.723708, 0, -0.690106, 0, 1, 0, 0.690106, 0, 0.723708, -15.0056, 0, 5.44254 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Path/Spatial4"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 15.1603 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance2" type="MeshInstance" parent="Path/Spatial4"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 21.6358 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance3" type="MeshInstance" parent="Path/Spatial4"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 20.0175 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance4" type="MeshInstance" parent="Path/Spatial4"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 18.3995 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance5" type="MeshInstance" parent="Path/Spatial4"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 16.7817 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance6" type="MeshInstance" parent="Path/Spatial4"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 13.5485 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance7" type="MeshInstance" parent="Path/Spatial4"]
+transform = Transform( 0.8, 0, 2.98023e-08, 0, 0.8, 0, -2.98023e-08, 0, 0.8, -4.891, 1.87963, 12.9973 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="Spatial6" type="Spatial" parent="Path"]
+editor/display_folded = true
+transform = Transform( 0.501797, 0, -0.864986, 0, 1, 0, 0.864986, 0, 0.501797, -17.7742, 0, 4.27802 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Path/Spatial6"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 15.1603 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance2" type="MeshInstance" parent="Path/Spatial6"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 21.6358 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance3" type="MeshInstance" parent="Path/Spatial6"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 20.0175 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance4" type="MeshInstance" parent="Path/Spatial6"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 18.3995 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance5" type="MeshInstance" parent="Path/Spatial6"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 16.7817 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance6" type="MeshInstance" parent="Path/Spatial6"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 13.5485 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance7" type="MeshInstance" parent="Path/Spatial6"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 12.9973 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="Spatial7" type="Spatial" parent="Path"]
+editor/display_folded = true
+transform = Transform( 0.277342, 0, -0.960772, 0, 1, 0, 0.960772, 0, 0.277342, -19.7142, 0, 4.37464 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Path/Spatial7"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 15.1603 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance2" type="MeshInstance" parent="Path/Spatial7"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 21.6358 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance3" type="MeshInstance" parent="Path/Spatial7"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 20.0175 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance4" type="MeshInstance" parent="Path/Spatial7"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 18.3995 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance5" type="MeshInstance" parent="Path/Spatial7"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 16.7817 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance6" type="MeshInstance" parent="Path/Spatial7"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 13.5485 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance7" type="MeshInstance" parent="Path/Spatial7"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 12.9973 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="Spatial8" type="Spatial" parent="Path"]
+editor/display_folded = true
+transform = Transform( -0.0309179, 0, -0.999522, 0, 1, 0, 0.999522, 0, -0.0309179, -21.1194, 0, 5.37643 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Path/Spatial8"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 15.1603 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance2" type="MeshInstance" parent="Path/Spatial8"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 21.6358 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance3" type="MeshInstance" parent="Path/Spatial8"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 20.0175 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance4" type="MeshInstance" parent="Path/Spatial8"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 18.3995 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance5" type="MeshInstance" parent="Path/Spatial8"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 16.7817 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance6" type="MeshInstance" parent="Path/Spatial8"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 13.5485 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance7" type="MeshInstance" parent="Path/Spatial8"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 12.9973 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="Spatial9" type="Spatial" parent="Path"]
+editor/display_folded = true
+transform = Transform( -0.558016, 0, -0.829831, 0, 1, 0, 0.829831, 0, -0.558016, -23.6299, 0, 6.66615 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Path/Spatial9"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 15.1603 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance2" type="MeshInstance" parent="Path/Spatial9"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 21.6358 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance3" type="MeshInstance" parent="Path/Spatial9"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 20.0175 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance4" type="MeshInstance" parent="Path/Spatial9"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 18.3995 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance5" type="MeshInstance" parent="Path/Spatial9"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 16.7817 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance6" type="MeshInstance" parent="Path/Spatial9"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 13.5485 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance7" type="MeshInstance" parent="Path/Spatial9"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 12.9973 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="Spatial10" type="Spatial" parent="Path"]
+editor/display_folded = true
+transform = Transform( -0.66968, 0, -0.74265, 0, 1, 0, 0.74265, 0, -0.66968, -21.1194, 0, 3.05934 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Path/Spatial10"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 15.1603 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance2" type="MeshInstance" parent="Path/Spatial10"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 21.6358 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance3" type="MeshInstance" parent="Path/Spatial10"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 20.0175 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance4" type="MeshInstance" parent="Path/Spatial10"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 18.3995 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance5" type="MeshInstance" parent="Path/Spatial10"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 16.7817 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance6" type="MeshInstance" parent="Path/Spatial10"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 13.5485 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance7" type="MeshInstance" parent="Path/Spatial10"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 12.9973 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="Spatial11" type="Spatial" parent="Path"]
+editor/display_folded = true
+transform = Transform( -0.863975, 0, -0.503534, 0, 1, 0, 0.503534, 0, -0.863975, -21.1194, 0, 2.05997 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Path/Spatial11"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 15.1603 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance2" type="MeshInstance" parent="Path/Spatial11"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 21.6358 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance3" type="MeshInstance" parent="Path/Spatial11"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 20.0175 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance4" type="MeshInstance" parent="Path/Spatial11"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 18.3995 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance5" type="MeshInstance" parent="Path/Spatial11"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 16.7817 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance6" type="MeshInstance" parent="Path/Spatial11"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 13.5485 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance7" type="MeshInstance" parent="Path/Spatial11"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 12.9973 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="Spatial12" type="Spatial" parent="Path"]
+editor/display_folded = true
+transform = Transform( -0.998358, 0, -0.0572849, 0, 1, 0, 0.0572849, 0, -0.998358, -21.4906, 0, 2.05997 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Path/Spatial12"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 15.1603 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance2" type="MeshInstance" parent="Path/Spatial12"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 21.6358 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance3" type="MeshInstance" parent="Path/Spatial12"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 20.0175 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance4" type="MeshInstance" parent="Path/Spatial12"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 18.3995 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance5" type="MeshInstance" parent="Path/Spatial12"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 16.7817 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance6" type="MeshInstance" parent="Path/Spatial12"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 13.5485 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance7" type="MeshInstance" parent="Path/Spatial12"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 12.9973 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="Spatial13" type="Spatial" parent="Path"]
+editor/display_folded = true
+transform = Transform( -0.998358, 0, -0.0572849, 0, 1, 0, 0.0572849, 0, -0.998358, -14.7663, 0, 2.05997 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Path/Spatial13"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 15.1603 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance2" type="MeshInstance" parent="Path/Spatial13"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 21.6358 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance3" type="MeshInstance" parent="Path/Spatial13"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 20.0175 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance4" type="MeshInstance" parent="Path/Spatial13"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 18.3995 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance5" type="MeshInstance" parent="Path/Spatial13"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 16.7817 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance6" type="MeshInstance" parent="Path/Spatial13"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 13.5485 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance7" type="MeshInstance" parent="Path/Spatial13"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 12.9973 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="Spatial14" type="Spatial" parent="Path"]
+editor/display_folded = true
+transform = Transform( -0.998358, 0, -0.0572849, 0, 1, 0, 0.0572849, 0, -0.998358, -6.49088, 0, 2.05997 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Path/Spatial14"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 15.1603 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance2" type="MeshInstance" parent="Path/Spatial14"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 21.6358 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance3" type="MeshInstance" parent="Path/Spatial14"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 20.0175 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance4" type="MeshInstance" parent="Path/Spatial14"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 18.3995 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance5" type="MeshInstance" parent="Path/Spatial14"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 16.7817 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance6" type="MeshInstance" parent="Path/Spatial14"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 13.5485 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance7" type="MeshInstance" parent="Path/Spatial14"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 12.9973 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="Spatial15" type="Spatial" parent="Path"]
+editor/display_folded = true
+transform = Transform( -0.998358, 0, -0.0572849, 0, 1, 0, 0.0572849, 0, -0.998358, 1.2053, 0, 2.05997 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Path/Spatial15"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 15.1603 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance2" type="MeshInstance" parent="Path/Spatial15"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 21.6358 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance3" type="MeshInstance" parent="Path/Spatial15"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 20.0175 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance4" type="MeshInstance" parent="Path/Spatial15"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 18.3995 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance5" type="MeshInstance" parent="Path/Spatial15"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 16.7817 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance6" type="MeshInstance" parent="Path/Spatial15"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 13.5485 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance7" type="MeshInstance" parent="Path/Spatial15"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 12.9973 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="Spatial16" type="Spatial" parent="Path"]
+editor/display_folded = true
+transform = Transform( -0.998358, 0, -0.0572849, 0, 1, 0, 0.0572849, 0, -0.998358, 8.90148, 0, 2.05997 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Path/Spatial16"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 15.1603 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance2" type="MeshInstance" parent="Path/Spatial16"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 21.6358 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance3" type="MeshInstance" parent="Path/Spatial16"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 20.0175 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance4" type="MeshInstance" parent="Path/Spatial16"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 18.3995 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance5" type="MeshInstance" parent="Path/Spatial16"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 16.7817 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance6" type="MeshInstance" parent="Path/Spatial16"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 13.5485 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance7" type="MeshInstance" parent="Path/Spatial16"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 12.9973 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="Spatial17" type="Spatial" parent="Path"]
+editor/display_folded = true
+transform = Transform( -0.998358, 0, -0.0572849, 0, 1, 0, 0.0572849, 0, -0.998358, 16.0438, 0, 2.05997 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Path/Spatial17"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 15.1603 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance2" type="MeshInstance" parent="Path/Spatial17"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 21.6358 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance3" type="MeshInstance" parent="Path/Spatial17"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 20.0175 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance4" type="MeshInstance" parent="Path/Spatial17"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 18.3995 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance5" type="MeshInstance" parent="Path/Spatial17"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 16.7817 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance6" type="MeshInstance" parent="Path/Spatial17"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 13.5485 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance7" type="MeshInstance" parent="Path/Spatial17"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 12.9973 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="Spatial18" type="Spatial" parent="Path"]
+editor/display_folded = true
+transform = Transform( -0.988709, 0, 0.149848, 0, 1, 0, -0.149848, 0, -0.988709, 20.2963, 0, 1.03515 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Path/Spatial18"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 15.1603 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance2" type="MeshInstance" parent="Path/Spatial18"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 21.6358 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance3" type="MeshInstance" parent="Path/Spatial18"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 20.0175 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance4" type="MeshInstance" parent="Path/Spatial18"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 18.3995 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance5" type="MeshInstance" parent="Path/Spatial18"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 16.7817 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance6" type="MeshInstance" parent="Path/Spatial18"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 13.5485 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance7" type="MeshInstance" parent="Path/Spatial18"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 12.9973 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="Spatial19" type="Spatial" parent="Path"]
+editor/display_folded = true
+transform = Transform( -0.876126, 0, 0.482081, 0, 1, 0, -0.482081, 0, -0.876126, 21.2383, 0, 1.66531 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Path/Spatial19"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 15.1603 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance2" type="MeshInstance" parent="Path/Spatial19"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 21.6358 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance3" type="MeshInstance" parent="Path/Spatial19"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 20.0175 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance4" type="MeshInstance" parent="Path/Spatial19"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 18.3995 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance5" type="MeshInstance" parent="Path/Spatial19"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 16.7817 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance6" type="MeshInstance" parent="Path/Spatial19"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 13.5485 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance7" type="MeshInstance" parent="Path/Spatial19"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 12.9973 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="Spatial20" type="Spatial" parent="Path"]
+editor/display_folded = true
+transform = Transform( -0.640982, 0, 0.767556, 0, 1, 0, -0.767556, 0, -0.640982, 21.2002, 0, 1.66531 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Path/Spatial20"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 15.1603 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance2" type="MeshInstance" parent="Path/Spatial20"]
+transform = Transform( 0.8, 0, -2.98023e-08, 0, 0.8, 0, 2.98023e-08, 0, 0.8, -4.891, 1.87963, 21.6358 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance3" type="MeshInstance" parent="Path/Spatial20"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 20.0175 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance4" type="MeshInstance" parent="Path/Spatial20"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 18.3995 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance5" type="MeshInstance" parent="Path/Spatial20"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 16.7817 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance6" type="MeshInstance" parent="Path/Spatial20"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 13.5485 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance7" type="MeshInstance" parent="Path/Spatial20"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 12.9973 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="Spatial21" type="Spatial" parent="Path"]
+editor/display_folded = true
+transform = Transform( 0.0218341, 0, 0.999761, 0, 1, 0, -0.999761, 0, 0.0218341, 22.6422, 0, -4.44931 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Path/Spatial21"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 15.1603 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance2" type="MeshInstance" parent="Path/Spatial21"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 21.6358 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance3" type="MeshInstance" parent="Path/Spatial21"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 20.0175 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance4" type="MeshInstance" parent="Path/Spatial21"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 18.3995 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance5" type="MeshInstance" parent="Path/Spatial21"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 16.7817 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance6" type="MeshInstance" parent="Path/Spatial21"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 13.5485 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance7" type="MeshInstance" parent="Path/Spatial21"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 12.9973 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="Spatial22" type="Spatial" parent="Path"]
+editor/display_folded = true
+transform = Transform( 0.324215, 0, 0.945983, 0, 1, 0, -0.945983, 0, 0.324215, 22.6422, 0, -3.37427 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Path/Spatial22"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 15.1603 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance2" type="MeshInstance" parent="Path/Spatial22"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 21.6358 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance3" type="MeshInstance" parent="Path/Spatial22"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 20.0175 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance4" type="MeshInstance" parent="Path/Spatial22"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 18.3995 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance5" type="MeshInstance" parent="Path/Spatial22"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 16.7817 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance6" type="MeshInstance" parent="Path/Spatial22"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 13.5485 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance7" type="MeshInstance" parent="Path/Spatial22"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 12.9973 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="Spatial23" type="Spatial" parent="Path"]
+editor/display_folded = true
+transform = Transform( 0.599044, 0, 0.800716, 0, 1, 0, -0.800716, 0, 0.599044, 22.6422, 0, -1.93941 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Path/Spatial23"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 15.1603 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance2" type="MeshInstance" parent="Path/Spatial23"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 21.6358 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance3" type="MeshInstance" parent="Path/Spatial23"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 20.0175 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance4" type="MeshInstance" parent="Path/Spatial23"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 18.3995 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance5" type="MeshInstance" parent="Path/Spatial23"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 16.7817 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance6" type="MeshInstance" parent="Path/Spatial23"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 13.5485 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance7" type="MeshInstance" parent="Path/Spatial23"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 12.9973 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="Spatial24" type="Spatial" parent="Path"]
+editor/display_folded = true
+transform = Transform( 0.862848, 0, 0.505464, 0, 1, 0, -0.505464, 0, 0.862848, 24.6501, 0, -0.760419 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Path/Spatial24"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 15.1603 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance2" type="MeshInstance" parent="Path/Spatial24"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 21.6358 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance3" type="MeshInstance" parent="Path/Spatial24"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 20.0175 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance4" type="MeshInstance" parent="Path/Spatial24"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 18.3995 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance5" type="MeshInstance" parent="Path/Spatial24"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 16.7817 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance6" type="MeshInstance" parent="Path/Spatial24"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 13.5485 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance7" type="MeshInstance" parent="Path/Spatial24"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 12.9973 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="Spatial25" type="Spatial" parent="Path"]
+editor/display_folded = true
+transform = Transform( 0.999997, 0, -0.00241303, 0, 1, 0, 0.00241303, 0, 0.999997, 27.5031, 0, -0.226871 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Path/Spatial25"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 15.1603 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance2" type="MeshInstance" parent="Path/Spatial25"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 21.6358 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance3" type="MeshInstance" parent="Path/Spatial25"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 20.0175 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance4" type="MeshInstance" parent="Path/Spatial25"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 18.3995 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance5" type="MeshInstance" parent="Path/Spatial25"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 16.7817 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance6" type="MeshInstance" parent="Path/Spatial25"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 13.5485 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance7" type="MeshInstance" parent="Path/Spatial25"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 12.9973 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="Spatial26" type="Spatial" parent="Path"]
+editor/display_folded = true
+transform = Transform( 0.999997, 0, -0.00241303, 0, 1, 0, 0.00241303, 0, 0.999997, 22.2172, 0, -0.226871 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Path/Spatial26"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 15.1603 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance2" type="MeshInstance" parent="Path/Spatial26"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 21.6358 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance3" type="MeshInstance" parent="Path/Spatial26"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 20.0175 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance4" type="MeshInstance" parent="Path/Spatial26"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 18.3995 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance5" type="MeshInstance" parent="Path/Spatial26"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 16.7817 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance6" type="MeshInstance" parent="Path/Spatial26"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 13.5485 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance7" type="MeshInstance" parent="Path/Spatial26"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 12.9973 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="Spatial27" type="Spatial" parent="Path"]
+editor/display_folded = true
+transform = Transform( 0.999997, 0, -0.00241303, 0, 1, 0, 0.00241303, 0, 0.999997, 16.0244, 0, -0.226871 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Path/Spatial27"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 15.1603 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance2" type="MeshInstance" parent="Path/Spatial27"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 21.6358 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance3" type="MeshInstance" parent="Path/Spatial27"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 20.0175 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance4" type="MeshInstance" parent="Path/Spatial27"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 18.3995 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance5" type="MeshInstance" parent="Path/Spatial27"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 16.7817 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance6" type="MeshInstance" parent="Path/Spatial27"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 13.5485 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance7" type="MeshInstance" parent="Path/Spatial27"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 12.9973 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="Spatial28" type="Spatial" parent="Path"]
+editor/display_folded = true
+transform = Transform( 0.999997, 0, -0.00241303, 0, 1, 0, 0.00241303, 0, 0.999997, 9.72185, 0, -0.226871 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Path/Spatial28"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 15.1603 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance2" type="MeshInstance" parent="Path/Spatial28"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 21.6358 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance3" type="MeshInstance" parent="Path/Spatial28"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 20.0175 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance4" type="MeshInstance" parent="Path/Spatial28"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 18.3995 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance5" type="MeshInstance" parent="Path/Spatial28"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 16.7817 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance6" type="MeshInstance" parent="Path/Spatial28"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 13.5485 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance7" type="MeshInstance" parent="Path/Spatial28"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 12.9973 )
 mesh = SubResource( 1 )
 material/0 = null
 
 [node name="Spatial" type="Spatial" parent="."]
+editor/display_folded = true
 visible = false
 script = ExtResource( 5 )
 
@@ -154,3 +1132,16 @@ mesh = SubResource( 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Spatial/Finish_Line/Area"]
 shape = SubResource( 3 )
+
+[node name="Spatial3" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( -0.99907, 0, 0.0431217, 0, 1, 0, -0.0431217, 0, -0.99907, -14.549, 0, 1.80972 )
+
+[node name="Box" parent="Spatial3" instance=ExtResource( 6 )]
+transform = Transform( 0.224867, -0.28861, -0.161674, 0.315533, 0.245844, 0, 0.0993666, -0.127534, 0.365871, -14.8506, 2.71183, 14.0342 )
+
+[node name="Box2" parent="Spatial3" instance=ExtResource( 6 )]
+transform = Transform( 0.224867, -0.28861, -0.161674, 0.315533, 0.245844, 0, 0.0993666, -0.127534, 0.365871, -14.8506, 2.71183, 17.3668 )
+
+[node name="Box3" parent="Spatial3" instance=ExtResource( 6 )]
+transform = Transform( 0.224867, -0.28861, -0.161674, 0.315533, 0.245844, 0, 0.0993666, -0.127534, 0.365871, -14.8506, 2.71183, 19.9301 )

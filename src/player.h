@@ -13,6 +13,9 @@ class Player : public KinematicBody {
 
 private:
 	Input *input;
+	time_t time_hit;
+    int speed;
+    time_t box_time;
 
 public:
     static void _register_methods();
@@ -22,7 +25,9 @@ public:
 
     void _init(); // our initializer called by Godot
     void _ready();
+    void set_hit();
     void _process(float delta);
+    void box_grab();
 };
 
 }
