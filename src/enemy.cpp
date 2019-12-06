@@ -37,7 +37,7 @@ void Enemy::_ready() {
     node->connect("body_shape_entered", this, "_on_body_entered");
     time_hit = time(NULL) - 5;
     node = get_node("Area2");
-    node->connect("body_shape_entered", this, "check_for_box");
+    node->connect("area_shape_entered", this, "check_for_box");
     velocity = 3;
     gravity = 9.8;
 }
@@ -73,10 +73,7 @@ void Enemy::check_for_box(int body_id, Node *body, int body_shape, int area_shap
 }
 
 void Enemy::_on_body_entered(int body_id, Node *body, int body_shape, int area_shape) {
-    // if (body->get_parent()->get("place") > get_parent()->get("place"))
-    //     time_hit = time(NULL);
-    // else
-    //     body->call("set_hit");
+
 }
           
 void Enemy::set_hit() {

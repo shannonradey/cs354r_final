@@ -21,7 +21,6 @@ void Lap::_ready() {
 
 void Lap::_on_body_entered(int body_id, Node *body, int body_shape, int area_shape) {
 	int cur_lap = lap;
-	Godot::print(body->get_parent()->get_name());
 	if (body->get_parent()->get_name() == "player") {
 		if (cur_lap == 3){
 			Node *node = body->get_parent()->get_node("Gui")->get_node("Finished");
