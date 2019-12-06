@@ -33,7 +33,7 @@ shape = SubResource( 3 )
 transform = Transform( -0.0166587, 0, -0.999861, 0, 1, 0, 0.999861, 0, -0.0166587, -3.62885, 1.47025, -0.127025 )
 
 [node name="FrontArea" type="Area" parent="KinematicBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 10, 1.02608, 1.57668, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 10, 1.02608, 0.643723, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="KinematicBody/FrontArea"]
 shape = SubResource( 4 )
