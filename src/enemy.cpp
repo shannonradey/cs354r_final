@@ -21,6 +21,11 @@ Enemy::~Enemy() {
 void Enemy::box_grab() {
     velocity = 10;
     speed = time(NULL);
+    cur_waypoint++;
+    if (cur_waypoint == num_waypoints)
+        cur_waypoint = 0;
+    set_target();
+    
 }
 
 void Enemy::_init() {
@@ -65,12 +70,14 @@ void Enemy::set_target() {
 }
 
 void Enemy::check_for_box(int body_id, Node *body, int body_shape, int area_shape) {
+    
     if (body->get_name() == "cube" && ((CanvasItem *)body)->is_visible()) {
         Vector3 closest_target = ((Spatial *)body)->get_global_transform().origin;
         target.x = round(int(closest_target.x));
-        target.y = round(int(closest_target.y));
+        target.z = round(int(closest_target.z));
     }
 }
+
 
 void Enemy::_on_body_entered(int body_id, Node *body, int body_shape, int area_shape) {
 

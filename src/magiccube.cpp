@@ -17,6 +17,7 @@ MagicCube::~MagicCube() {
 void MagicCube::_ready() {
 	this->connect("body_shape_entered", this, "_on_body_entered");
 	get_parent()->set_name("cube");
+	set_name("cube");
 	
 }
 
