@@ -19,7 +19,6 @@ Enemy::~Enemy() {
 }
 
 void Enemy::box_grab() {
-    Godot::print("box_grab");
     velocity = 10;
     speed = time(NULL);
 }
@@ -40,6 +39,7 @@ void Enemy::_ready() {
     node = get_node("Area2");
     node->connect("body_shape_entered", this, "check_for_box");
     velocity = 3;
+    gravity = 9.8;
 }
 
 
@@ -65,9 +65,7 @@ void Enemy::set_target() {
 }
 
 void Enemy::check_for_box(int body_id, Node *body, int body_shape, int area_shape) {
-    Godot::print(body->get_name());
     if (body->get_name() == "cube" && ((CanvasItem *)body)->is_visible()) {
-        Godot::print("found box");
         Vector3 closest_target = ((Spatial *)body)->get_global_transform().origin;
         target.x = round(int(closest_target.x));
         target.y = round(int(closest_target.y));
@@ -115,6 +113,7 @@ void Enemy::_process(float delta) {
         else if (target.z < cur_pos.z) {
             move.z += -1;
         }
+        move.y -= gravity * delta;
         
         move_and_slide((move.operator*(velocity)));
     }

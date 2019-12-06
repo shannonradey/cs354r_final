@@ -14,8 +14,9 @@ class Player : public KinematicBody {
 private:
 	Input *input;
 	time_t time_hit;
-    int speed;
+    double speed;
     time_t box_time;
+    double gravity;
 
 public:
     static void _register_methods();

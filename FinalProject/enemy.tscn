@@ -35,7 +35,7 @@ script = ExtResource( 1 )
 script = ExtResource( 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="KinematicBody"]
-transform = Transform( -3.49691e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.49691e-08, -0.564189, 0.710993, 0 )
+transform = Transform( -3.49691e-08, 0, 0.8, 0, 2.3, 0, -0.8, 0, -3.49691e-08, -0.564189, 0.15407, 0 )
 shape = SubResource( 1 )
 
 [node name="enemy" type="MeshInstance" parent="KinematicBody"]
@@ -75,6 +75,7 @@ mesh = SubResource( 9 )
 material/0 = null
 
 [node name="Area2" type="Area" parent="KinematicBody"]
+editor/display_folded = true
 transform = Transform( 4, 0, 0, 0, 1, 0, 0, 0, 3, 4.56261, 0.966815, 0 )
 visible = false
 

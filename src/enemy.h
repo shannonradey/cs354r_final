@@ -20,8 +20,9 @@ private:
 	int cur_waypoint;
     time_t time_hit;
     int target_rotate;
-    int velocity;
+    double velocity;
     time_t speed;
+    double gravity;
 
 public:
     static void _register_methods();

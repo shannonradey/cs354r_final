@@ -28,6 +28,7 @@ void Player::_ready() {
     set_name("player");
     time_hit = time(NULL) - 2;
     speed = 4;
+    gravity = 9.8;
 }
 
 void Player::set_hit() {
@@ -57,6 +58,7 @@ void Player::_process(float delta) {
         if (input->is_action_pressed("ui_right")) {
             rotate_y(-0.02);
         }
+        velocity.y -= gravity * delta;
         move_and_slide(velocity * (speed));
     }
     else {
