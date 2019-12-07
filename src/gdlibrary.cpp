@@ -3,6 +3,7 @@
 #include "enemy.h"
 #include "lap.h"
 #include "magiccube.h"
+#include "enemy2.h"
 
 extern "C" void GDN_EXPORT godot_gdnative_init(godot_gdnative_init_options *o) {
     godot::Godot::gdnative_init(o);
@@ -20,4 +21,5 @@ extern "C" void GDN_EXPORT godot_nativescript_init(void *handle) {
     godot::register_class<godot::Enemy>();
     godot::register_class<godot::Lap>();
     godot::register_class<godot::MagicCube>();
+    godot::register_class<godot::Enemy2>();
 }

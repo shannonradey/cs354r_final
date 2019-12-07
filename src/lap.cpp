@@ -29,7 +29,7 @@ void Lap::_on_body_entered(int body_id, Node *body, int body_shape, int area_sha
 				get_node("Gui")->get_node("HBoxContainer")->
 				get_node("NinePatchRect")->get_node("Label"))->get_text();
 			((Label *)node->get_node("Place"))->set_text(place);
-			if (place == "1") {
+			if (place == "1") { 
 				((Label *)node->get_node("St"))->set_text("st");
 			} else if (place == "2") {
 				((Label *)node->get_node("St"))->set_text("nd");

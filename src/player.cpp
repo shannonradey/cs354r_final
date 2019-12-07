@@ -5,8 +5,8 @@ using namespace godot;
 void Player::_register_methods() {
     register_method("_process", &Player::_process);
     register_method("_ready", &Player::_ready);
-    register_method("set_hit", &Player::set_hit);
     register_method("box_grab", &Player::box_grab);
+    register_method("hit_slow", &Player::hit_slow);
 }
 
 Player::Player() {
@@ -27,17 +27,18 @@ void Player::_init() {
 void Player::_ready() {
     set_name("player");
     time_hit = time(NULL) - 2;
-    speed = 4;
+    speed = 4.3;
     gravity = 9.8;
 }
 
-void Player::set_hit() {
-    time_hit = time(NULL);
+void Player::hit_slow() {
+    speed = 2;
+    box_time = time(NULL);
 }
 
 void Player::_process(float delta) {
     if (time(NULL) - 2.5 > box_time) {
-        speed = 4;
+        speed = 4.3;
     }
     if (time(NULL) - 1.5 > time_hit) {
     	Vector3 cur;

@@ -26,7 +26,7 @@ public:
 
     void _init(); // our initializer called by Godot
     void _ready();
-    void set_hit();
+    void hit_slow();
     void _process(float delta);
     void box_grab();
 };
