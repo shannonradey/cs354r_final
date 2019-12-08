@@ -7,29 +7,29 @@
 size = 45
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=11]
+[sub_resource type="DynamicFont" id=2]
 size = 34
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFontData" id=2]
+[sub_resource type="DynamicFontData" id=3]
 font_path = "res://acme/Acme-Regular.ttf"
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=4]
 size = 45
-font_data = SubResource( 2 )
-
-[sub_resource type="DynamicFont" id=10]
-size = 34
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFontData" id=4]
-font_path = "res://acme/Acme-Regular.ttf"
+font_data = SubResource( 3 )
 
 [sub_resource type="DynamicFont" id=5]
-size = 35
-font_data = SubResource( 4 )
+size = 34
+font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFontData" id=6]
+font_path = "res://acme/Acme-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=7]
+size = 35
+font_data = SubResource( 6 )
+
+[sub_resource type="DynamicFont" id=8]
 size = 51
 font_data = ExtResource( 2 )
 
@@ -40,12 +40,14 @@ font_data = ExtResource( 2 )
 [node name="Node2D" type="Node2D"]
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
+editor/display_folded = true
 margin_left = 880.0
 margin_top = 20.0
 margin_right = 1014.0
 margin_bottom = 90.0
 
 [node name="NinePatchRect" type="NinePatchRect" parent="HBoxContainer"]
+editor/display_folded = true
 margin_right = 64.0
 margin_bottom = 70.0
 rect_min_size = Vector2( 60, 60 )
@@ -66,10 +68,11 @@ margin_left = -2.32135
 margin_top = -25.5348
 margin_right = 67.6786
 margin_bottom = 18.4652
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 2 )
 text = "Place"
 
 [node name="Lap" type="NinePatchRect" parent="HBoxContainer"]
+editor/display_folded = true
 margin_left = 68.0
 margin_right = 134.0
 margin_bottom = 70.0
@@ -81,7 +84,7 @@ margin_left = 20.0
 margin_top = 6.0
 margin_right = 51.0
 margin_bottom = 64.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 text = "0"
 
 [node name="Label2" type="Label" parent="HBoxContainer/Lap"]
@@ -89,10 +92,11 @@ margin_left = 10.8098
 margin_top = -27.6067
 margin_right = 57.8098
 margin_bottom = 16.3933
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 5 )
 text = "Lap"
 
 [node name="Finished" type="NinePatchRect" parent="."]
+editor/display_folded = true
 visible = false
 margin_left = 320.0
 margin_top = 208.0
@@ -107,19 +111,19 @@ margin_left = 42.1376
 margin_top = 17.7948
 margin_right = -45.8624
 margin_bottom = -6.20514
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 7 )
 text = "Congratulations! You ended in 
       place"
 align = 1
 autowrap = true
 
-[node name="Label2" type="Label" parent="Finished"]
-margin_left = 134.202
+[node name="Place" type="Label" parent="Finished"]
+margin_left = 128.662
 margin_top = 102.4
-margin_right = 192.202
+margin_right = 186.662
 margin_bottom = 167.4
-custom_fonts/font = SubResource( 6 )
-text = "1"
+custom_fonts/font = SubResource( 8 )
+text = "5"
 
 [node name="St" type="Label" parent="Finished"]
 margin_left = 153.183

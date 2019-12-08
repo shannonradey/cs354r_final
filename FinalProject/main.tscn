@@ -25,7 +25,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.507679, 0, 0 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.505, 0, 0 )
 
 [node name="player" parent="." instance=ExtResource( 3 )]
-transform = Transform( 0.319484, 0, 0.947592, 0, 1, 0, -0.947592, 0, 0.319484, 11.8763, 1.72217, -0.367582 )
+transform = Transform( -1, 0, -0.000112861, 0, 1, 0, 0.000112861, 0, -1, 11.8763, 1.72217, 13.1466 )
 place = 3
 
 [node name="Path" type="Spatial" parent="."]
@@ -33,7 +33,6 @@ editor/display_folded = true
 visible = false
 
 [node name="Spatial" type="Spatial" parent="Path"]
-editor/display_folded = true
 
 [node name="MeshInstance2" type="MeshInstance" parent="Path/Spatial"]
 transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 12.552 )
@@ -1120,6 +1119,7 @@ material/0 = null
 
 [node name="Spatial" type="Spatial" parent="."]
 editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.447876, 0 )
 visible = false
 script = ExtResource( 4 )
 
@@ -1139,8 +1139,11 @@ transform = Transform( -0.99907, 0, 0.0431217, 0, 1, 0, -0.0431217, 0, -0.99907,
 [node name="Box" parent="Boxes" instance=ExtResource( 5 )]
 transform = Transform( 0.224867, -0.28861, -0.161674, 0.315533, 0.245844, 0, 0.0993666, -0.127534, 0.365871, -14.8506, 2.71183, 14.0342 )
 
+[node name="Box2" parent="Boxes" instance=ExtResource( 5 )]
+transform = Transform( 0.224867, -0.28861, -0.161674, 0.315533, 0.245844, 0, 0.0993666, -0.127534, 0.365871, -14.7142, 2.71183, 17.1955 )
+
 [node name="Box3" parent="Boxes" instance=ExtResource( 5 )]
-transform = Transform( 0.224867, -0.28861, -0.161674, 0.315533, 0.245844, 0, 0.0993666, -0.127534, 0.365871, -14.8506, 2.71183, 19.9301 )
+transform = Transform( 0.224867, -0.28861, -0.161674, 0.315533, 0.245844, 0, 0.0993666, -0.127534, 0.365871, -14.7777, 2.71183, 21.618 )
 
 [node name="Boxes2" type="Spatial" parent="."]
 editor/display_folded = true
@@ -1149,11 +1152,14 @@ transform = Transform( 0.99661, 0, -0.082267, 0, 1, 0, 0.082267, 0, 0.99661, 11.
 [node name="Box" parent="Boxes2" instance=ExtResource( 5 )]
 transform = Transform( 0.224867, -0.28861, -0.161674, 0.315533, 0.245844, 0, 0.0993666, -0.127534, 0.365871, -14.8506, 2.71183, 14.0342 )
 
+[node name="Box2" parent="Boxes2" instance=ExtResource( 5 )]
+transform = Transform( 0.224867, -0.28861, -0.161674, 0.315533, 0.245844, 0, 0.0993666, -0.127534, 0.365871, -14.5919, 2.71183, 17.1676 )
+
 [node name="Box3" parent="Boxes2" instance=ExtResource( 5 )]
 transform = Transform( 0.224867, -0.28861, -0.161674, 0.315533, 0.245844, 0, 0.0993666, -0.127534, 0.365871, -14.8506, 2.71183, 19.9301 )
 
-[node name="Spatial2" parent="." instance=ExtResource( 6 )]
-transform = Transform( -0.999941, 0, 0.0108573, 0, 1, 0, -0.0108573, 0, -0.999941, 6.93211, 1.15225, 15.6829 )
+[node name="Enemy" parent="." instance=ExtResource( 6 )]
+transform = Transform( -0.999941, 0, 0.0108573, 0, 1, 0, -0.0108573, 0, -0.999941, 6.93211, 1.51472, 15.6829 )
 place = 2
 
 [node name="Spatial3" parent="." instance=ExtResource( 6 )]
@@ -1169,18 +1175,18 @@ transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 15.7929
 place = 4
 
 [node name="Enemy2" parent="." instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.1368, 1.94938, -22.7107 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.1935, 1.94938, -15.827 )
 
 [node name="Path2" type="Spatial" parent="."]
 editor/display_folded = true
 visible = false
 
 [node name="MeshInstance" type="MeshInstance" parent="Path2"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.9493, 1.39313, -4.9569 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.9493, 1.39313, -6.12166 )
 mesh = SubResource( 4 )
 material/0 = null
 
 [node name="MeshInstance2" type="MeshInstance" parent="Path2"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.9493, 1.39313, -25.6511 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.9493, 1.39313, -24.8857 )
 mesh = SubResource( 4 )
 material/0 = null

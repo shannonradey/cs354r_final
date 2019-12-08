@@ -63,7 +63,6 @@ mesh = SubResource( 6 )
 material/0 = SubResource( 7 )
 
 [node name="Area" type="Area" parent="KinematicBody"]
-editor/display_folded = true
 transform = Transform( 1.4, 0, 0, 0, 1, 0, 0, 0, 1, -0.597958, 0.789915, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="KinematicBody/Area"]
@@ -75,6 +74,7 @@ mesh = SubResource( 9 )
 material/0 = null
 
 [node name="Area2" type="Area" parent="KinematicBody"]
+editor/display_folded = true
 transform = Transform( 4, 0, 0, 0, 1, 0, 0, 0, 6, 6.04593, 0.966815, 0 )
 visible = false
 

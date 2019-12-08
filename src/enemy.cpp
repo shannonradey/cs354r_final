@@ -14,9 +14,11 @@ void Enemy::_register_methods() {
 }
 
 Enemy::Enemy() {
+
 }
 
 Enemy::~Enemy() {
+
 }
 
 void Enemy::box_grab() {
@@ -86,7 +88,8 @@ void Enemy::check_for_box(int body_id, Node *body, int body_shape, int area_shap
 
 
 void Enemy::_on_body_entered(int body_id, Node *body, int body_shape, int area_shape) {
-
+    if (body->get_name() == "ball") 
+        set_hit();
 }
           
 void Enemy::set_hit() {
@@ -97,37 +100,33 @@ void Enemy::_process(float delta) {
     if (time(NULL) - 2.5 > speed) {
         velocity = 3;
     }
-    if (time(NULL) - 0.5 > time_hit) {
-        if (target_rotate < this->get_rotation().y) {
-            rotate_y(-0.05);
-        } else if (target_rotate > this->get_rotation().y) {
-            rotate_y(0.05);
-        }
-        Vector3 move = Vector3();
-        Vector3 cur_pos = get_global_transform().origin;
-        if (int(round(cur_pos.x)) == target.x && int(round(cur_pos.z)) == target.z) {
-            cur_waypoint++;
-            if (cur_waypoint == num_waypoints)
-                cur_waypoint = 0;
-            set_target();
-        }
-        if (target.x < cur_pos.x) {
-            move.x += -1;
-        }
-        else if (target.x > cur_pos.x) {
-            move.x += 1;
-        }
-        if (target.z > cur_pos.z) {
-            move.z += 1;
-        }
-        else if (target.z < cur_pos.z) {
-            move.z += -1;
-        }
-        move.y -= gravity * delta;
-        
-        move_and_slide((move.operator*(velocity)));
+    if (target_rotate < this->get_rotation().y) {
+        rotate_y(-0.05);
+    } else if (target_rotate > this->get_rotation().y) {
+        rotate_y(0.05);
     }
-    else {
-        rotate_y(.3);
+
+    Vector3 move = Vector3();
+    Vector3 cur_pos = get_global_transform().origin;
+    if (int(round(cur_pos.x)) == target.x && int(round(cur_pos.z)) == target.z) {
+        cur_waypoint++;
+        if (cur_waypoint == num_waypoints)
+            cur_waypoint = 0;
+        set_target();
     }
+    if (target.x < cur_pos.x) {
+        move.x += -1;
+    }
+    else if (target.x > cur_pos.x) {
+        move.x += 1;
+    }
+    if (target.z > cur_pos.z) {
+        move.z += 1;
+    }
+    else if (target.z < cur_pos.z) {
+        move.z += -1;
+    }
+    move.y -= gravity * delta;
+    
+    move_and_slide((move.operator*(velocity)));    
 }
