@@ -5,6 +5,7 @@
 #include <KinematicBody.hpp>
 #include <KinematicCollision.hpp>
 #include <Input.hpp>
+#include <Area.hpp>
 
 namespace godot {
 

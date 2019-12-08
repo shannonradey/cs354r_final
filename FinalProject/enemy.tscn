@@ -35,7 +35,7 @@ script = ExtResource( 1 )
 script = ExtResource( 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="KinematicBody"]
-transform = Transform( -3.49691e-08, 0, 0.8, 0, 2.3, 0, -0.8, 0, -3.49691e-08, -0.564189, 0.15407, 0 )
+transform = Transform( -3.49691e-08, 0, 0.8, 0, 2.2, 0, -0.8, 0, -3.49691e-08, -0.564189, 0.51098, 0 )
 shape = SubResource( 1 )
 
 [node name="enemy" type="MeshInstance" parent="KinematicBody"]
@@ -63,19 +63,19 @@ mesh = SubResource( 6 )
 material/0 = SubResource( 7 )
 
 [node name="Area" type="Area" parent="KinematicBody"]
-editor/display_folded = true
 transform = Transform( 1.4, 0, 0, 0, 1, 0, 0, 0, 1, -0.597958, 0.789915, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="KinematicBody/Area"]
 shape = SubResource( 8 )
 
 [node name="MeshInstance" type="MeshInstance" parent="KinematicBody/Area"]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0 )
 visible = false
 mesh = SubResource( 9 )
 material/0 = null
 
 [node name="Area2" type="Area" parent="KinematicBody"]
-transform = Transform( 4, 0, 0, 0, 1, 0, 0, 0, 6, 6.04593, 0.966815, 0 )
+transform = Transform( 4, 0, 0, 0, 1, 0, 0, 0, 10, 4.56261, 0.966815, 0 )
 visible = false
 
 [node name="CollisionShape" type="CollisionShape" parent="KinematicBody/Area2"]

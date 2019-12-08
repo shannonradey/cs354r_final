@@ -19,7 +19,7 @@ Enemy::~Enemy() {
 }
 
 void Enemy::box_grab() {
-    velocity = 10;
+    velocity = 300;
     speed = time(NULL);
     cur_waypoint++;
     if (cur_waypoint == num_waypoints)
@@ -39,11 +39,11 @@ void Enemy::_ready() {
     set_target();
     set_name("enemy");
     Node *node = get_node("Area");
-    node->connect("body_shape_entered", this, "_on_body_entered");
+    node->connect("area_shape_entered", this, "_on_body_entered");
     time_hit = time(NULL) - 5;
     node = get_node("Area2");
     node->connect("area_shape_entered", this, "check_for_box");
-    velocity = 3;
+    velocity = 150;
     gravity = 9.8;
 }
 
@@ -80,16 +80,22 @@ void Enemy::check_for_box(int body_id, Node *body, int body_shape, int area_shap
 
 
 void Enemy::_on_body_entered(int body_id, Node *body, int body_shape, int area_shape) {
+    //Godot::print(body->get_name());
+    if (body->get_name() == "Ball"){
+        Godot::print("ball");
+        set_hit();
+    }
 
 }
           
 void Enemy::set_hit() {
+    Godot::print("haiiiiii");
     time_hit = time(NULL);
 }
 
 void Enemy::_process(float delta) {
     if (time(NULL) - 2.5 > speed) {
-        velocity = 3;
+        velocity = 150;
     }
     if (time(NULL) - 0.5 > time_hit) {
         if (target_rotate < this->get_rotation().y) {
@@ -119,7 +125,7 @@ void Enemy::_process(float delta) {
         }
         move.y -= gravity * delta;
         
-        move_and_slide((move.operator*(velocity)));
+        move_and_slide((move.operator*(velocity) * delta));
     }
     else {
         rotate_y(.3);

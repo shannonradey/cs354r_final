@@ -16,8 +16,17 @@ Player::~Player() {
 }
 
 void Player::box_grab() { 
-    speed = 10;
-    box_time = time(NULL);
+    int random = 1;
+    Godot::print(String::num(random));
+    if (random == 1){
+        Node *area = get_node("Ball");
+        ((Area *)area)->set_visible(true);
+        area->call("set_target");
+    }
+    else{
+        speed = 20;
+        box_time = time(NULL);
+    }
 }
 
 void Player::_init() {
@@ -27,8 +36,13 @@ void Player::_init() {
 void Player::_ready() {
     set_name("player");
     time_hit = time(NULL) - 2;
-    speed = 4;
+    speed = 10;
     gravity = 9.8;
+  
+
+    
+    
+    //Godot::print(enemies[0]->get_name());
 }
 
 void Player::set_hit() {
@@ -37,7 +51,7 @@ void Player::set_hit() {
 
 void Player::_process(float delta) {
     if (time(NULL) - 2.5 > box_time) {
-        speed = 4;
+        speed = 10;
     }
     if (time(NULL) - 1.5 > time_hit) {
     	Vector3 cur;
@@ -64,4 +78,7 @@ void Player::_process(float delta) {
     else {
         rotate_y(.3);
     }
+
+
+
 }
