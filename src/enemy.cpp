@@ -10,6 +10,7 @@ void Enemy::_register_methods() {
     register_method("check_for_box", &Enemy::check_for_box);
     register_method("set_hit", &Enemy::set_hit);
     register_method("box_grab", &Enemy::box_grab);
+    register_method("hit_slow", &Enemy::hit_slow);
 }
 
 Enemy::Enemy() {
@@ -26,6 +27,11 @@ void Enemy::box_grab() {
         cur_waypoint = 0;
     set_target();
     
+}
+
+void Enemy::hit_slow() {
+    velocity = 1.5;
+    speed = time(NULL);
 }
 
 void Enemy::_init() {
@@ -71,7 +77,7 @@ void Enemy::set_target() {
 
 void Enemy::check_for_box(int body_id, Node *body, int body_shape, int area_shape) {
     
-    if (body->get_name() == "cube" && ((CanvasItem *)body)->is_visible()) {
+    if (body->get_name() == "cube") {
         Vector3 closest_target = ((Spatial *)body)->get_global_transform().origin;
         target.x = round(int(closest_target.x));
         target.z = round(int(closest_target.z));

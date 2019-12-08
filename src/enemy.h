@@ -36,6 +36,7 @@ public:
     void set_target();
     void set_hit();
     void _ready();
+    void hit_slow();
     void _on_body_entered(int body_id, Node *body, int body_shape, int area_shape);
     void check_for_box(int body_id, Node *body, int body_shape, int area_shape);
 };

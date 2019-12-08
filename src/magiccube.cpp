@@ -24,6 +24,7 @@ void MagicCube::_ready() {
 void MagicCube::_on_body_entered(int body_id, Node *body, int body_shape, int area_shape) {
 	if (is_visible()) {
 		set_visible(false);
+		set_name("not_cube");
 		time_hit = time(NULL);
 		body->call("box_grab");
 	}
@@ -35,6 +36,7 @@ void MagicCube::_process(float delta) {
 	rotate_z(.05);
 	if (!is_visible()) {
 		if (time(NULL) - 10 > time_hit) {
+			set_name("cube");
 			set_visible(true);
 		}
 	}
