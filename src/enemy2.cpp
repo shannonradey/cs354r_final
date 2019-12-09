@@ -65,7 +65,7 @@ void Enemy2::_process(float delta) {
 	    move.z += -1;
 	}
 
-	translate((move.operator*(.02)));
+	translate((move.operator*(.08)));
 }
 
 void Enemy2::_init() {

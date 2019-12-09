@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://ground.tscn" type="PackedScene" id=1]
 [ext_resource path="res://racetrack.tscn" type="PackedScene" id=2]
@@ -16,6 +16,14 @@
 
 [sub_resource type="CubeMesh" id=4]
 
+[sub_resource type="BoxShape" id=5]
+
+[sub_resource type="CubeMesh" id=6]
+
+[sub_resource type="CylinderShape" id=7]
+
+[sub_resource type="CylinderMesh" id=8]
+
 [node name="Spatial" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.507679, 0, 0 )
 
@@ -25,7 +33,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.507679, 0, 0 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.505, 0, 0 )
 
 [node name="player" parent="." instance=ExtResource( 3 )]
-transform = Transform( -1, 0, -0.000112861, 0, 1, 0, 0.000112861, 0, -1, 11.8763, 1.72217, 13.1466 )
+transform = Transform( -0.7, 0, -7.90461e-05, 0, 0.7, 0, 7.90461e-05, 0, -0.7, 13.2267, 1.25698, 13.1466 )
 place = 3
 
 [node name="Path" type="Spatial" parent="."]
@@ -33,6 +41,8 @@ editor/display_folded = true
 visible = false
 
 [node name="Spatial" type="Spatial" parent="Path"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.156325, -0.102283, 1.29211 )
 
 [node name="MeshInstance2" type="MeshInstance" parent="Path/Spatial"]
 transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 12.552 )
@@ -66,7 +76,7 @@ material/0 = null
 
 [node name="Spatial2" type="Spatial" parent="Path"]
 editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.66902, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.31447, -0.0938759, 1.12312 )
 
 [node name="MeshInstance2" type="MeshInstance" parent="Path/Spatial2"]
 transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 21.6358 )
@@ -105,7 +115,7 @@ material/0 = null
 
 [node name="Spatial3" type="Spatial" parent="Path"]
 editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.7947, 0, 0.713444 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.8601, -0.0256157, 1.04027 )
 
 [node name="MeshInstance2" type="MeshInstance" parent="Path/Spatial3"]
 transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 21.6358 )
@@ -144,7 +154,7 @@ material/0 = null
 
 [node name="Spatial5" type="Spatial" parent="Path"]
 editor/display_folded = true
-transform = Transform( 0.919255, 0, -0.393661, 0, 1, 0, 0.393661, 0, 0.919255, -13.0311, 0, 3.4178 )
+transform = Transform( 0.919255, 0, -0.393661, 0, 1, 0, 0.393661, 0, 0.919255, -13.0311, 0, 4.22801 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Path/Spatial5"]
 transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 15.1603 )
@@ -183,7 +193,7 @@ material/0 = null
 
 [node name="Spatial4" type="Spatial" parent="Path"]
 editor/display_folded = true
-transform = Transform( 0.723708, 0, -0.690106, 0, 1, 0, 0.690106, 0, 0.723708, -15.0056, 0, 5.44254 )
+transform = Transform( 0.723708, 0, -0.690106, 0, 1, 0, 0.690106, 0, 0.723708, -16.3103, 1.90735e-05, 6.52063 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Path/Spatial4"]
 transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 15.1603 )
@@ -222,7 +232,7 @@ material/0 = null
 
 [node name="Spatial6" type="Spatial" parent="Path"]
 editor/display_folded = true
-transform = Transform( 0.501797, 0, -0.864986, 0, 1, 0, 0.864986, 0, 0.501797, -17.7742, 0, 4.27802 )
+transform = Transform( 0.501797, 0, -0.864986, 0, 1, 0, 0.864986, 0, 0.501797, -18.8658, -0.000228882, 6.95976 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Path/Spatial6"]
 transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 15.1603 )
@@ -261,7 +271,7 @@ material/0 = null
 
 [node name="Spatial7" type="Spatial" parent="Path"]
 editor/display_folded = true
-transform = Transform( 0.277342, 0, -0.960772, 0, 1, 0, 0.960772, 0, 0.277342, -19.7142, 0, 4.37464 )
+transform = Transform( 0.277342, 0, -0.960772, 0, 1, 0, 0.960772, 0, 0.277342, -21.0094, 5.34058e-05, 5.00595 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Path/Spatial7"]
 transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 15.1603 )
@@ -300,7 +310,7 @@ material/0 = null
 
 [node name="Spatial8" type="Spatial" parent="Path"]
 editor/display_folded = true
-transform = Transform( -0.0309179, 0, -0.999522, 0, 1, 0, 0.999522, 0, -0.0309179, -21.1194, 0, 5.37643 )
+transform = Transform( -0.0309179, 0, -0.999522, 0, 1, 0, 0.999522, 0, -0.0309179, -21.6622, 0.000141144, 4.16682 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Path/Spatial8"]
 transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 15.1603 )
@@ -339,7 +349,7 @@ material/0 = null
 
 [node name="Spatial9" type="Spatial" parent="Path"]
 editor/display_folded = true
-transform = Transform( -0.558016, 0, -0.829831, 0, 1, 0, 0.829831, 0, -0.558016, -23.6299, 0, 6.66615 )
+transform = Transform( -0.558016, 0, -0.829831, 0, 1, 0, 0.829831, 0, -0.558016, -24.7096, 0.000255585, 4.59505 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Path/Spatial9"]
 transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 15.1603 )
@@ -378,7 +388,7 @@ material/0 = null
 
 [node name="Spatial10" type="Spatial" parent="Path"]
 editor/display_folded = true
-transform = Transform( -0.66968, 0, -0.74265, 0, 1, 0, 0.74265, 0, -0.66968, -21.1194, 0, 3.05934 )
+transform = Transform( -0.66968, 0, -0.74265, 0, 1, 0, 0.74265, 0, -0.66968, -22.1962, 0.000244141, 1.1623 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Path/Spatial10"]
 transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 15.1603 )
@@ -417,7 +427,7 @@ material/0 = null
 
 [node name="Spatial11" type="Spatial" parent="Path"]
 editor/display_folded = true
-transform = Transform( -0.863975, 0, -0.503534, 0, 1, 0, 0.503534, 0, -0.863975, -21.1194, 0, 2.05997 )
+transform = Transform( -0.863975, 0, -0.503534, 0, 1, 0, 0.503534, 0, -0.863975, -20.8774, 6.86646e-05, 0.92413 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Path/Spatial11"]
 transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 15.1603 )
@@ -456,7 +466,7 @@ material/0 = null
 
 [node name="Spatial12" type="Spatial" parent="Path"]
 editor/display_folded = true
-transform = Transform( -0.998358, 0, -0.0572849, 0, 1, 0, 0.0572849, 0, -0.998358, -21.4906, 0, 2.05997 )
+transform = Transform( -0.998358, 0, -0.0572849, 0, 1, 0, 0.0572849, 0, -0.998358, -21.4126, 0.0853348, 0.988627 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Path/Spatial12"]
 transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 15.1603 )
@@ -495,7 +505,7 @@ material/0 = null
 
 [node name="Spatial13" type="Spatial" parent="Path"]
 editor/display_folded = true
-transform = Transform( -0.998358, 0, -0.0572849, 0, 1, 0, 0.0572849, 0, -0.998358, -14.7663, 0, 2.05997 )
+transform = Transform( -0.998358, 0, -0.0572849, 0, 1, 0, 0.0572849, 0, -0.998358, -14.4922, 0.0937271, 0.85945 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Path/Spatial13"]
 transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 15.1603 )
@@ -534,7 +544,7 @@ material/0 = null
 
 [node name="Spatial14" type="Spatial" parent="Path"]
 editor/display_folded = true
-transform = Transform( -0.998358, 0, -0.0572849, 0, 1, 0, 0.0572849, 0, -0.998358, -6.49088, 0, 2.05997 )
+transform = Transform( -0.998358, 0, -0.0572849, 0, 1, 0, 0.0572849, 0, -0.998358, -6.64838, 0.102066, 0.810103 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Path/Spatial14"]
 transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 15.1603 )
@@ -573,7 +583,7 @@ material/0 = null
 
 [node name="Spatial15" type="Spatial" parent="Path"]
 editor/display_folded = true
-transform = Transform( -0.998358, 0, -0.0572849, 0, 1, 0, 0.0572849, 0, -0.998358, 1.2053, 0, 2.05997 )
+transform = Transform( -0.998358, 0, -0.0572849, 0, 1, 0, 0.0572849, 0, -0.998358, 0.695066, -0.295921, 0.574427 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Path/Spatial15"]
 transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 15.1603 )
@@ -612,7 +622,7 @@ material/0 = null
 
 [node name="Spatial16" type="Spatial" parent="Path"]
 editor/display_folded = true
-transform = Transform( -0.998358, 0, -0.0572849, 0, 1, 0, 0.0572849, 0, -0.998358, 8.90148, 0, 2.05997 )
+transform = Transform( -0.998358, 0, -0.0572849, 0, 1, 0, 0.0572849, 0, -0.998358, 8.94725, -0.387672, 0.240802 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Path/Spatial16"]
 transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 15.1603 )
@@ -651,7 +661,7 @@ material/0 = null
 
 [node name="Spatial17" type="Spatial" parent="Path"]
 editor/display_folded = true
-transform = Transform( -0.998358, 0, -0.0572849, 0, 1, 0, 0.0572849, 0, -0.998358, 16.0438, 0, 2.05997 )
+transform = Transform( -0.998358, 0, -0.0572849, 0, 1, 0, 0.0572849, 0, -0.998358, 16.1391, -0.495094, -0.129159 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Path/Spatial17"]
 transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 15.1603 )
@@ -690,7 +700,7 @@ material/0 = null
 
 [node name="Spatial18" type="Spatial" parent="Path"]
 editor/display_folded = true
-transform = Transform( -0.966365, 0, 0.257173, 0, 1, 0, -0.257173, 0, -0.966365, 18.02, 0.00170898, -0.366266 )
+transform = Transform( -0.966365, 0, 0.257173, 0, 1, 0, -0.257173, 0, -0.966365, 18.168, -0.485313, -2.32185 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Path/Spatial18"]
 transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 15.1603 )
@@ -729,7 +739,7 @@ material/0 = null
 
 [node name="Spatial19" type="Spatial" parent="Path"]
 editor/display_folded = true
-transform = Transform( -0.876126, 0, 0.482081, 0, 1, 0, -0.482081, 0, -0.876126, 21.376, 0.000972748, 0.400489 )
+transform = Transform( -0.876126, 0, 0.482081, 0, 1, 0, -0.482081, 0, -0.876126, 21.5211, -0.476444, -1.51653 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Path/Spatial19"]
 transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 15.1603 )
@@ -768,7 +778,7 @@ material/0 = null
 
 [node name="Spatial20" type="Spatial" parent="Path"]
 editor/display_folded = true
-transform = Transform( -0.640982, 0, 0.767556, 0, 1, 0, -0.767556, 0, -0.640982, 21.2002, 0, 1.66531 )
+transform = Transform( -0.640982, 0, 0.767556, 0, 1, 0, -0.767556, 0, -0.640982, 22.3427, -1.07779, 0.305216 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Path/Spatial20"]
 transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 15.1603 )
@@ -807,7 +817,7 @@ material/0 = null
 
 [node name="Spatial21" type="Spatial" parent="Path"]
 editor/display_folded = true
-transform = Transform( 0.0218341, 0, 0.999761, 0, 1, 0, -0.999761, 0, 0.0218341, 22.6422, 0, -4.44931 )
+transform = Transform( 0.0218341, 0, 0.999761, 0, 1, 0, -0.999761, 0, 0.0218341, 23.5145, -0.586861, -4.27862 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Path/Spatial21"]
 transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 15.1603 )
@@ -846,7 +856,7 @@ material/0 = null
 
 [node name="Spatial22" type="Spatial" parent="Path"]
 editor/display_folded = true
-transform = Transform( 0.324215, 0, 0.945983, 0, 1, 0, -0.945983, 0, 0.324215, 23.2178, 3.8147e-06, -2.65806 )
+transform = Transform( 0.324215, 0, 0.945983, 0, 1, 0, -0.945983, 0, 0.324215, 24.4001, -0.703838, -1.95772 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Path/Spatial22"]
 transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 15.1603 )
@@ -885,7 +895,7 @@ material/0 = null
 
 [node name="Spatial23" type="Spatial" parent="Path"]
 editor/display_folded = true
-transform = Transform( 0.599044, 0, 0.800716, 0, 1, 0, -0.800716, 0, 0.599044, 23.3628, 3.8147e-06, -0.553846 )
+transform = Transform( 0.599044, 0, 0.800716, 0, 1, 0, -0.800716, 0, 0.599044, 23.7827, -3.81469e-06, 0.975462 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Path/Spatial23"]
 transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 15.1603 )
@@ -963,7 +973,7 @@ material/0 = null
 
 [node name="Spatial25" type="Spatial" parent="Path"]
 editor/display_folded = true
-transform = Transform( 0.999997, 0, -0.00241303, 0, 1, 0, 0.00241303, 0, 0.999997, 27.5031, 0, -0.226871 )
+transform = Transform( 0.999997, 0, -0.00241303, 0, 1, 0, 0.00241303, 0, 0.999997, 26.762, 0.114563, 2.60859 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Path/Spatial25"]
 transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 15.1603 )
@@ -1002,7 +1012,7 @@ material/0 = null
 
 [node name="Spatial26" type="Spatial" parent="Path"]
 editor/display_folded = true
-transform = Transform( 0.999997, 0, -0.00241303, 0, 1, 0, 0.00241303, 0, 0.999997, 22.2172, 0, -0.226871 )
+transform = Transform( 0.999997, 0, -0.00241303, 0, 1, 0, 0.00241303, 0, 0.999997, 21.5806, 0.203926, 1.65028 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Path/Spatial26"]
 transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 15.1603 )
@@ -1041,7 +1051,7 @@ material/0 = null
 
 [node name="Spatial27" type="Spatial" parent="Path"]
 editor/display_folded = true
-transform = Transform( 0.999997, 0, -0.00241303, 0, 1, 0, 0.00241303, 0, 0.999997, 16.0244, 0, -0.226871 )
+transform = Transform( 0.999997, 0, -0.00241303, 0, 1, 0, 0.00241303, 0, 0.999997, 15.9058, 0.195358, 1.65388 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Path/Spatial27"]
 transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 15.1603 )
@@ -1080,7 +1090,7 @@ material/0 = null
 
 [node name="Spatial28" type="Spatial" parent="Path"]
 editor/display_folded = true
-transform = Transform( 0.999997, 0, -0.00241303, 0, 1, 0, 0.00241303, 0, 0.999997, 9.72185, 0, -0.226871 )
+transform = Transform( 0.999997, 0, -0.00241303, 0, 1, 0, 0.00241303, 0, 0.999997, 8.44465, 0.179688, 1.61184 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Path/Spatial28"]
 transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.891, 1.87963, 15.1603 )
@@ -1134,7 +1144,7 @@ shape = SubResource( 3 )
 
 [node name="Boxes" type="Spatial" parent="."]
 editor/display_folded = true
-transform = Transform( -0.99907, 0, 0.0431217, 0, 1, 0, -0.0431217, 0, -0.99907, -13.9736, -1.03318, 1.80972 )
+transform = Transform( -0.99907, 0, 0.0431217, 0, 1, 0, -0.0431217, 0, -0.99907, -13.1756, -1.03318, 1.80972 )
 
 [node name="Box" parent="Boxes" instance=ExtResource( 5 )]
 transform = Transform( 0.224867, -0.28861, -0.161674, 0.315533, 0.245844, 0, 0.0993666, -0.127534, 0.365871, -14.8506, 2.71183, 14.0342 )
@@ -1147,7 +1157,7 @@ transform = Transform( 0.224867, -0.28861, -0.161674, 0.315533, 0.245844, 0, 0.0
 
 [node name="Boxes2" type="Spatial" parent="."]
 editor/display_folded = true
-transform = Transform( 0.99661, 0, -0.082267, 0, 1, 0, 0.082267, 0, 0.99661, 11.7749, -1.10629, 1.80972 )
+transform = Transform( 0.99661, 0, -0.082267, 0, 1, 0, 0.082267, 0, 0.99661, 12.5871, -1.10629, 1.80972 )
 
 [node name="Box" parent="Boxes2" instance=ExtResource( 5 )]
 transform = Transform( 0.224867, -0.28861, -0.161674, 0.315533, 0.245844, 0, 0.0993666, -0.127534, 0.365871, -14.8506, 2.71183, 14.0342 )
@@ -1158,24 +1168,24 @@ transform = Transform( 0.224867, -0.28861, -0.161674, 0.315533, 0.245844, 0, 0.0
 [node name="Box3" parent="Boxes2" instance=ExtResource( 5 )]
 transform = Transform( 0.224867, -0.28861, -0.161674, 0.315533, 0.245844, 0, 0.0993666, -0.127534, 0.365871, -14.8506, 2.71183, 19.9301 )
 
-[node name="Enemy" parent="." instance=ExtResource( 6 )]
-transform = Transform( -0.999941, 0, 0.0108573, 0, 1, 0, -0.0108573, 0, -0.999941, 6.93211, 1.51472, 15.6829 )
+[node name="Enemy1" parent="." instance=ExtResource( 6 )]
+transform = Transform( -0.699959, 0, 0.0076001, 0, 0.7, 0, -0.0076001, 0, -0.699959, 6.93211, 0.974181, 15.6829 )
 place = 2
 
-[node name="Spatial3" parent="." instance=ExtResource( 6 )]
-transform = Transform( -0.999837, 0, 0.0180363, 0, 1, 0, -0.0180363, 0, -0.999837, 2.51785, 1.24939, 13.3107 )
+[node name="Enemy3" parent="." instance=ExtResource( 6 )]
+transform = Transform( -0.699886, 0, 0.0126254, 0, 0.7, 0, -0.0126254, 0, -0.699886, 2.51785, 0.971217, 13.3107 )
 place = 1
 
-[node name="Spatial4" parent="." instance=ExtResource( 6 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 21.8168, 0, 12.9677 )
+[node name="Enemy4" parent="." instance=ExtResource( 6 )]
+transform = Transform( -0.7, 0, -1.05697e-07, 0, 0.7, 0, 1.05697e-07, 0, -0.7, 21.8168, 0.977547, 14.6259 )
 place = 5
 
-[node name="Spatial5" parent="." instance=ExtResource( 6 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 15.7929, 0, 20.6629 )
+[node name="Enemy2" parent="." instance=ExtResource( 6 )]
+transform = Transform( -0.7, 0, -1.05697e-07, 0, 0.7, 0, 1.05697e-07, 0, -0.7, 15.7929, 0.902084, 20.6629 )
 place = 4
 
-[node name="Enemy2" parent="." instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.1935, 1.94938, -15.827 )
+[node name="Enemy-2" parent="." instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.79175, 2.24259, -11.1577 )
 
 [node name="Path2" type="Spatial" parent="."]
 editor/display_folded = true
@@ -1189,4 +1199,78 @@ material/0 = null
 [node name="MeshInstance2" type="MeshInstance" parent="Path2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.9493, 1.39313, -24.8857 )
 mesh = SubResource( 4 )
+material/0 = null
+
+[node name="Spatial2" type="Spatial" parent="."]
+editor/display_folded = true
+visible = false
+
+[node name="StaticBody" type="StaticBody" parent="Spatial2"]
+transform = Transform( 20, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.38841, 11.0259 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Spatial2/StaticBody"]
+shape = SubResource( 5 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Spatial2/StaticBody"]
+mesh = SubResource( 6 )
+material/0 = null
+
+[node name="StaticBody2" type="StaticBody" parent="Spatial2"]
+transform = Transform( 20, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.38841, -9.80353 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Spatial2/StaticBody2"]
+shape = SubResource( 5 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Spatial2/StaticBody2"]
+mesh = SubResource( 6 )
+material/0 = null
+
+[node name="StaticBody3" type="StaticBody" parent="Spatial2"]
+transform = Transform( 11, 0, 0, 0, 1, 0, 0, 0, 10, 22.0937, 1.38841, 0.957203 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Spatial2/StaticBody3"]
+shape = SubResource( 7 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Spatial2/StaticBody3"]
+mesh = SubResource( 8 )
+material/0 = null
+
+[node name="StaticBody4" type="StaticBody" parent="Spatial2"]
+transform = Transform( 11, 0, 0, 0, 1, 0, 0, 0, 10, 21.1924, 1.38841, 2.35028 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Spatial2/StaticBody4"]
+shape = SubResource( 7 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Spatial2/StaticBody4"]
+mesh = SubResource( 8 )
+material/0 = null
+
+[node name="StaticBody5" type="StaticBody" parent="Spatial2"]
+transform = Transform( 11, 0, 0, 0, 1, 0, 0, 0, 10, 19.6645, 1.38841, -0.721652 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Spatial2/StaticBody5"]
+shape = SubResource( 7 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Spatial2/StaticBody5"]
+mesh = SubResource( 8 )
+material/0 = null
+
+[node name="StaticBody6" type="StaticBody" parent="Spatial2"]
+transform = Transform( 11, 0, 0, 0, 1, 0, 0, 0, 10, -20.7862, 1.38841, -0.721652 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Spatial2/StaticBody6"]
+shape = SubResource( 7 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Spatial2/StaticBody6"]
+mesh = SubResource( 8 )
+material/0 = null
+
+[node name="StaticBody7" type="StaticBody" parent="Spatial2"]
+transform = Transform( 11, 0, 0, 0, 1, 0, 0, 0, 10, -20.7862, 1.38841, 1.95134 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Spatial2/StaticBody7"]
+shape = SubResource( 7 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Spatial2/StaticBody7"]
+mesh = SubResource( 8 )
 material/0 = null

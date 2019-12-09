@@ -17,4 +17,5 @@ mesh = SubResource( 2 )
 [node name="StaticBody" type="StaticBody" parent="CSGMesh"]
 
 [node name="CollisionShape" type="CollisionShape" parent="CSGMesh/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1.6, 0, 0, 0, 1, 0, 0, 0 )
 shape = SubResource( 3 )

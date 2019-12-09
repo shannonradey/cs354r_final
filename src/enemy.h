@@ -7,6 +7,7 @@
 #include <SceneTree.hpp>
 #include <Viewport.hpp>
 #include <CanvasItem.hpp>
+#include <Area.hpp>
 
 namespace godot {
 
@@ -23,6 +24,7 @@ private:
     double velocity;
     time_t speed;
     double gravity;
+    bool box;
 
 public:
     static void _register_methods();

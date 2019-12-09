@@ -5,6 +5,7 @@
 #include <KinematicBody.hpp>
 #include <KinematicCollision.hpp>
 #include <Input.hpp>
+#include <Area.hpp>
 
 namespace godot {
 
@@ -27,6 +28,7 @@ public:
     void _init(); // our initializer called by Godot
     void _ready();
     void hit_slow();
+    void set_hit();
     void _process(float delta);
     void box_grab();
 };

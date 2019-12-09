@@ -40,14 +40,12 @@ font_data = ExtResource( 2 )
 [node name="Node2D" type="Node2D"]
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-editor/display_folded = true
 margin_left = 880.0
 margin_top = 20.0
 margin_right = 1014.0
 margin_bottom = 90.0
 
 [node name="NinePatchRect" type="NinePatchRect" parent="HBoxContainer"]
-editor/display_folded = true
 margin_right = 64.0
 margin_bottom = 70.0
 rect_min_size = Vector2( 60, 60 )
@@ -72,7 +70,6 @@ custom_fonts/font = SubResource( 2 )
 text = "Place"
 
 [node name="Lap" type="NinePatchRect" parent="HBoxContainer"]
-editor/display_folded = true
 margin_left = 68.0
 margin_right = 134.0
 margin_bottom = 70.0
@@ -96,7 +93,6 @@ custom_fonts/font = SubResource( 5 )
 text = "Lap"
 
 [node name="Finished" type="NinePatchRect" parent="."]
-editor/display_folded = true
 visible = false
 margin_left = 320.0
 margin_top = 208.0

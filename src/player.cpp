@@ -7,6 +7,7 @@ void Player::_register_methods() {
     register_method("_ready", &Player::_ready);
     register_method("box_grab", &Player::box_grab);
     register_method("hit_slow", &Player::hit_slow);
+    register_method("set_hit", &Player::set_hit);
 }
 
 Player::Player() {
@@ -16,19 +17,33 @@ Player::~Player() {
 }
 
 void Player::box_grab() { 
-    speed = 10;
-    box_time = time(NULL);
+    int random = rand()%2+1;
+    if (random == 1){
+        Node *area = get_node("Ball");
+        ((Area *)area)->set_visible(true);
+        area->call("set_target");
+    }
+    else{
+        speed = 23;
+        box_time = time(NULL);
+    }
 }
 
 void Player::_init() {
     input = Input::get_singleton();
 }
 
+void Player::set_hit() {
+    time_hit = time(NULL);
+}
+
 void Player::_ready() {
     set_name("player");
     time_hit = time(NULL) - 2;
-    speed = 4.3;
+    speed = 13;
+
     gravity = 9.8;
+  
 }
 
 void Player::hit_slow() {
@@ -38,9 +53,13 @@ void Player::hit_slow() {
 
 void Player::_process(float delta) {
     if (time(NULL) - 2.5 > box_time) {
-        speed = 4.3;
+
+        speed = 13;
+
     }
     if (time(NULL) - 1.5 > time_hit) {
+        ((Spatial *)get_node("car"))->set_rotation_degrees(Vector3(0, 90, 0));
+        ((Spatial *)get_node("player"))->set_rotation_degrees(Vector3(0, 90, 0));
     	Vector3 cur;
     	Vector3 velocity = Vector3(0, 0, 0);
     	if (input->is_action_pressed("ui_down")) {
@@ -63,6 +82,10 @@ void Player::_process(float delta) {
         move_and_slide(velocity * (speed));
     }
     else {
-        rotate_y(.3);
+        ((Spatial *)get_node("car"))->rotate_y(.4);
+        ((Spatial *)get_node("player"))->rotate_y(.4);
     }
+
+
+
 }

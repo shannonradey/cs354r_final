@@ -22,17 +22,25 @@ Enemy::~Enemy() {
 }
 
 void Enemy::box_grab() {
-    velocity = 10;
-    speed = time(NULL);
+
+    int random = rand()%2+1;
+    if (random == 1){
+        Node *area = get_node("Ball");
+        ((Area *)area)->set_visible(true);
+        area->call("set_target");
+    }
+    else{
+        velocity = 400;
+        speed = time(NULL);
+    }
     cur_waypoint++;
     if (cur_waypoint == num_waypoints)
         cur_waypoint = 0;
     set_target();
-    
 }
 
 void Enemy::hit_slow() {
-    velocity = 1.5;
+    velocity = 200;
     speed = time(NULL);
 }
 
@@ -47,17 +55,16 @@ void Enemy::_ready() {
     set_target();
     set_name("enemy");
     Node *node = get_node("Area");
-    node->connect("body_shape_entered", this, "_on_body_entered");
+    node->connect("area_shape_entered", this, "_on_body_entered");
     time_hit = time(NULL) - 5;
     node = get_node("Area2");
     node->connect("area_shape_entered", this, "check_for_box");
-    velocity = 3;
+    velocity = 300;
     gravity = 9.8;
 }
 
 
-void Enemy::set_target() {
-    Array spatials = ((Spatial *)waypoints[cur_waypoint])->get_children();
+void Enemy::set_target() {    Array spatials = ((Spatial *)waypoints[cur_waypoint])->get_children();
     Vector3 closest_target = ((Spatial *)spatials[0])->get_global_transform().origin;
     Node *nearest_node = spatials[0];
     Vector3 cur_pos = get_global_transform().origin;
@@ -79,17 +86,22 @@ void Enemy::set_target() {
 
 void Enemy::check_for_box(int body_id, Node *body, int body_shape, int area_shape) {
     
-    if (body->get_name() == "cube") {
+    if (body->get_name() == "cube" && !box) {
         Vector3 closest_target = ((Spatial *)body)->get_global_transform().origin;
         target.x = round(int(closest_target.x));
         target.z = round(int(closest_target.z));
+        box = true;
     }
 }
 
 
 void Enemy::_on_body_entered(int body_id, Node *body, int body_shape, int area_shape) {
-    if (body->get_name() == "ball") 
+
+    if (body->get_name() == "Ball"){
+        Godot::print("ball");
         set_hit();
+    }
+
 }
           
 void Enemy::set_hit() {
@@ -98,35 +110,40 @@ void Enemy::set_hit() {
 
 void Enemy::_process(float delta) {
     if (time(NULL) - 2.5 > speed) {
-        velocity = 3;
-    }
-    if (target_rotate < this->get_rotation().y) {
-        rotate_y(-0.05);
-    } else if (target_rotate > this->get_rotation().y) {
-        rotate_y(0.05);
+        velocity = 300;
     }
 
-    Vector3 move = Vector3();
-    Vector3 cur_pos = get_global_transform().origin;
-    if (int(round(cur_pos.x)) == target.x && int(round(cur_pos.z)) == target.z) {
-        cur_waypoint++;
-        if (cur_waypoint == num_waypoints)
-            cur_waypoint = 0;
-        set_target();
+    if (time(NULL) - 1 > time_hit) {
+        if (target_rotate < this->get_rotation().y) {
+            rotate_y(-0.05);
+        } else if (target_rotate > this->get_rotation().y) {
+            rotate_y(0.05);
+        }
+        Vector3 move = Vector3();
+        Vector3 cur_pos = get_global_transform().origin;
+        if (int(round(cur_pos.x)) == target.x && int(round(cur_pos.z)) == target.z) {
+            cur_waypoint++;
+            if (cur_waypoint == num_waypoints)
+                cur_waypoint = 0;
+            set_target();
+            box = false;
+        }
+        if (target.x < cur_pos.x) {
+            move.x += -1;
+        }
+        else if (target.x > cur_pos.x) {
+            move.x += 1;
+        }
+        if (target.z > cur_pos.z) {
+            move.z += 1;
+        }
+        else if (target.z < cur_pos.z) {
+            move.z += -1;
+        }
+        move.y -= gravity * delta;
+        
+        move_and_slide((move.operator*(velocity) * delta));
+    } else {
+        rotate_y(0.2);
     }
-    if (target.x < cur_pos.x) {
-        move.x += -1;
-    }
-    else if (target.x > cur_pos.x) {
-        move.x += 1;
-    }
-    if (target.z > cur_pos.z) {
-        move.z += 1;
-    }
-    else if (target.z < cur_pos.z) {
-        move.z += -1;
-    }
-    move.y -= gravity * delta;
-    
-    move_and_slide((move.operator*(velocity)));    
 }
